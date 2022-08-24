@@ -94,7 +94,7 @@ class Login extends StatelessWidget {
                               onPressed: () {
                                 if (userId.text == "thejoin" &&
                                     userPw.text == "1234") {
-                                  Get.toNamed(Home.id);
+                                  Get.offAllNamed(Home.id);
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
