@@ -11,7 +11,15 @@ class ReserveMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ReserveMain')),
+      appBar: AppBar(
+        title: Text('ReserveMain'),
+        backgroundColor: Color.fromARGB(
+          255,
+          26,
+          35,
+          126,
+        ),
+      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
