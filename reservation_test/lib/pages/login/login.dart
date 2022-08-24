@@ -12,7 +12,12 @@ class Login extends StatelessWidget {
     String controller2 = '';
 
     return Scaffold(
-      appBar: AppBar(title: Text('reservation')),
+      appBar: AppBar(title: Text('로그인')),
+      body: Center(
+          child: TextButton(
+        child: Text('login'),
+        onPressed: () => Get.toNamed(Home.id),
+      )),
     );
   }
 }
