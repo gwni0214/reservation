@@ -50,9 +50,10 @@ class Wifi extends StatelessWidget {
                     side: BorderSide(color: Colors.blue.shade900),
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  child: Text(
-                    'QR Code',
-                  ),
+                  child: Image.asset('images/wifiqr.png'),
+                  // child: Text(
+                  //   'QR Code',
+                  // ),
                   // Image.asset('images/wifiqr.png'),
                 ),
               ),
