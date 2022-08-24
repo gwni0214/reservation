@@ -8,15 +8,11 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String controller = '';
+    String controller2 = '';
+
     return Scaffold(
-      appBar: AppBar(title: Text('login')),
-      body: Center(
-          child: TextButton(
-        child: Text('login'),
-        onPressed: () {
-          Get.toNamed(Home.id);
-        },
-      )),
+      appBar: AppBar(title: Text('reservation')),
     );
   }
 }
