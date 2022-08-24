@@ -8,8 +8,8 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String controller = '';
-    String controller2 = '';
+    final TextEditingController userId = TextEditingController();
+    final TextEditingController userPw = TextEditingController();
 
     return Scaffold(
       // appBar: AppBar(
@@ -48,7 +48,6 @@ class Login extends StatelessWidget {
                         height: 30.0,
                       ),
                       TextField(
-                        // controller: controller,
                         autofocus: true,
                         decoration: InputDecoration(
                           labelText: 'Enter your ID',
@@ -58,12 +57,12 @@ class Login extends StatelessWidget {
                           ),
                         ),
                         keyboardType: TextInputType.text,
+                        controller: userId,
                       ),
                       SizedBox(
                         height: 15.0,
                       ),
                       TextField(
-                        // controller: controller2,
                         decoration: InputDecoration(
                           labelText: 'Enter your password',
                           enabledBorder: OutlineInputBorder(
@@ -73,6 +72,7 @@ class Login extends StatelessWidget {
                         ),
                         keyboardType: TextInputType.text,
                         obscureText: true,
+                        controller: userPw,
                       ),
                       SizedBox(
                         height: 15.0,
@@ -81,7 +81,12 @@ class Login extends StatelessWidget {
                         minWidth: 100.0,
                         height: 30.0,
                         child: ElevatedButton(
-                          onPressed: () => Get.toNamed(Home.id),
+                          onPressed: () {
+                            if (userId.text == "thejoin" &&
+                                userPw.text == "1234") {
+                              Get.toNamed(Home.id);
+                            }
+                          },
                           child: Text('로그인'),
                           // style: ElevatedButton.styleFrom(),
                         ),
