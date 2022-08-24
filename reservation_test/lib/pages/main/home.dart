@@ -21,13 +21,6 @@ class Home extends StatelessWidget {
           35,
           126,
         ),
-        iconTheme: IconThemeData(
-            color: Color.fromARGB(
-          255,
-          26,
-          35,
-          126,
-        )),
         elevation: 0.0,
         centerTitle: true,
       ),
