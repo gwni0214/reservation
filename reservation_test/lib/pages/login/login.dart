@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:reservation_test/pages/main/home.dart';
 
 class Login extends StatelessWidget {
+  static const id = '/login';
   const Login({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +15,7 @@ class Login extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text('Login 페이지'),
       // ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -46,7 +49,7 @@ class Login extends StatelessWidget {
                       ),
                       TextField(
                         // controller: controller,
-                        // autofocus: true,
+                        autofocus: true,
                         decoration: InputDecoration(
                           labelText: 'Enter your ID',
                           enabledBorder: OutlineInputBorder(
