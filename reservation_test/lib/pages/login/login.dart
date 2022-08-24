@@ -12,7 +12,7 @@ class Login extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text('Login 페이지'),
       // ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -46,7 +46,7 @@ class Login extends StatelessWidget {
                       ),
                       TextField(
                         // controller: controller,
-                        autofocus: true,
+                        // autofocus: true,
                         decoration: InputDecoration(
                           labelText: 'Enter your ID',
                           enabledBorder: OutlineInputBorder(
