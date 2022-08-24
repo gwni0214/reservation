@@ -81,7 +81,7 @@ class Login extends StatelessWidget {
                         minWidth: 100.0,
                         height: 30.0,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Get.toNamed(Home.id),
                           child: Text('로그인'),
                           // style: ElevatedButton.styleFrom(),
                         ),
