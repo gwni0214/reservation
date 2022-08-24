@@ -51,10 +51,6 @@ class Wifi extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   child: Image.asset('images/wifiqr.png'),
-                  // child: Text(
-                  //   'QR Code',
-                  // ),
-                  // Image.asset('images/wifiqr.png'),
                 ),
               ),
               SizedBox(
