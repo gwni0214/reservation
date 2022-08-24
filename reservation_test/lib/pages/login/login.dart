@@ -31,10 +31,21 @@ class Login extends StatelessWidget {
                 Form(
                   child: Theme(
                     data: ThemeData(
-                      primaryColor: Colors.blue,
+                      primaryColor: Color.fromARGB(
+                        255,
+                        26,
+                        35,
+                        126,
+                      ),
                       inputDecorationTheme: InputDecorationTheme(
-                        labelStyle:
-                            TextStyle(color: Colors.blue, fontSize: 15.0),
+                        labelStyle: TextStyle(
+                            color: Color.fromARGB(
+                              255,
+                              26,
+                              35,
+                              126,
+                            ),
+                            fontSize: 15.0),
                       ),
                     ),
                     child: Container(
@@ -62,8 +73,14 @@ class Login extends StatelessWidget {
                             decoration: InputDecoration(
                               labelText: 'ID를 입력하세요',
                               enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(width: 3, color: Colors.blue),
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromARGB(
+                                      255,
+                                      26,
+                                      35,
+                                      126,
+                                    )),
                               ),
                             ),
                             keyboardType: TextInputType.text,
@@ -76,8 +93,14 @@ class Login extends StatelessWidget {
                             decoration: InputDecoration(
                               labelText: '비밀번호를 입력하세요',
                               enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(width: 3, color: Colors.blue),
+                                borderSide: BorderSide(
+                                    width: 3,
+                                    color: Color.fromARGB(
+                                      255,
+                                      26,
+                                      35,
+                                      126,
+                                    )),
                               ),
                             ),
                             keyboardType: TextInputType.text,
@@ -87,27 +110,47 @@ class Login extends StatelessWidget {
                           SizedBox(
                             height: 15.0,
                           ),
-                          ButtonTheme(
-                            minWidth: 100.0,
-                            height: 30.0,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (userId.text == "thejoin" &&
-                                    userPw.text == "1234") {
-                                  Get.offAllNamed(Home.id);
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text('로그인 정보를 다시 확인하세요',
-                                          textAlign: TextAlign.center),
-                                      duration: Duration(seconds: 3),
-                                      backgroundColor: Colors.blue,
+                          SizedBox(
+                            width: 100.0,
+                            height: 50.0,
+                            child: ButtonTheme(
+                              minWidth: 100.0,
+                              height: 30.0,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  if (userId.text == "thejoin" &&
+                                      userPw.text == "1234") {
+                                    Get.offAllNamed(Home.id);
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text('로그인 정보를 다시 확인하세요',
+                                            textAlign: TextAlign.center),
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Color.fromARGB(
+                                          255,
+                                          26,
+                                          35,
+                                          126,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Color.fromARGB(
+                                      255,
+                                      26,
+                                      35,
+                                      126,
                                     ),
-                                  );
-                                }
-                              },
-                              child: Text('로그인'),
-                              // style: ElevatedButton.styleFrom(),
+                                  ),
+                                ),
+                                child: Text('로그인'),
+                                // style: ElevatedButton.styleFrom(),
+                              ),
                             ),
                           ),
                         ],
