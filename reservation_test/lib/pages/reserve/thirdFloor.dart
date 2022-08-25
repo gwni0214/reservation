@@ -14,7 +14,6 @@ class ThirdFloor extends StatelessWidget {
         PageController(initialPage: 0, viewportFraction: 1);
 
     bool reservation3f = false;
-    bool reservation2f = false;
 
     return Center(
       child: Column(
