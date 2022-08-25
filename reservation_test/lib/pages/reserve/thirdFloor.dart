@@ -13,15 +13,15 @@ class ThirdFloor extends StatelessWidget {
     PageController controller =
         PageController(initialPage: 0, viewportFraction: 1);
 
-    bool reservation3f = false;
+    bool reservCheck = false;
 
     return Center(
       child: Column(
         children: [
           Container(
             width: 300.0,
-            height: 200.0,
-            padding: EdgeInsets.all(15.0),
+            height: 170.0,
+            padding: EdgeInsets.all(10.0),
             margin: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
@@ -43,7 +43,6 @@ class ThirdFloor extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       '09:30 ~ 10:00',
@@ -77,59 +76,62 @@ class ThirdFloor extends StatelessWidget {
             count: 2,
             effect: SlideEffect(), // your preferred effect
           ),
-          ListView(
-            shrinkWrap: true,
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    Container(
-                      height: 45.0,
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (reservation3f == false) {
-                            Get.toNamed(ReserveWrite.id);
-                          } else if (reservation3f == true) {
-                            Get.toNamed(ReserveView.id);
-                          }
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('09:00 ~ 09:30'),
-                            Text('예약완료'),
-                          ],
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 25.0,
+          Expanded(
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('09:00 ~ 09:30'),
+                              Text('예약완료'),
+                            ],
                           ),
-                          primary: Colors.grey.shade300,
-                          textStyle: TextStyle(
-                            fontSize: 20.0,
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade300,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
 
           ///////////////////////
-          TextButton(
-              onPressed: () => {Get.toNamed(ReserveWrite.id)},
-              child: Text('예약하기')),
-          TextButton(
-              onPressed: () => Get.toNamed(ReserveView.id),
-              child: Text('예약한거 보기')),
-          TextButton(
-              onPressed: () => Get.toNamed(ReserveModify.id),
-              child: Text('예약 수정하기')),
+          // TextButton(
+          //     onPressed: () => {Get.toNamed(ReserveWrite.id)},
+          //     child: Text('예약하기')),
+          // TextButton(
+          //     onPressed: () => Get.toNamed(ReserveView.id),
+          //     child: Text('예약한거 보기')),
+          // TextButton(
+          //     onPressed: () => Get.toNamed(ReserveModify.id),
+          //     child: Text('예약 수정하기')),
         ],
       ),
     );

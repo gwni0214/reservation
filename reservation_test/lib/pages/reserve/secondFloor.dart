@@ -13,16 +13,15 @@ class SecondFloor extends StatelessWidget {
     PageController controller =
         PageController(initialPage: 0, viewportFraction: 1);
 
-    bool reservation3f = false;
-    bool reservation2f = false;
+    bool reservCheck = false;
 
     return Center(
       child: Column(
         children: [
           Container(
             width: 300.0,
-            height: 200.0,
-            padding: EdgeInsets.all(15.0),
+            height: 170.0,
+            padding: EdgeInsets.all(10.0),
             margin: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.0),
@@ -91,9 +90,9 @@ class SecondFloor extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                       child: ElevatedButton(
                         onPressed: () {
-                          if (reservation2f == false) {
+                          if (reservCheck == false) {
                             Get.toNamed(ReserveWrite.id);
-                          } else if (reservation2f == true) {
+                          } else if (reservCheck == true) {
                             Get.toNamed(ReserveView.id);
                           }
                         },

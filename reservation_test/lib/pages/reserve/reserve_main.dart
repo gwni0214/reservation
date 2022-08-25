@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-// import 'package:reservation_test/pages/reserve/reserve_modify.dart';
-// import 'package:reservation_test/pages/reserve/reserve_view.dart';
-// import 'package:reservation_test/pages/reserve/reserve_write.dart';
 import 'thirdFloor.dart';
 import 'secondFloor.dart';
 
@@ -15,8 +10,6 @@ class ReserveMain extends StatelessWidget {
   Widget build(BuildContext context) {
     PageController controller =
         PageController(initialPage: 0, viewportFraction: 1);
-    bool reservation3f = false;
-    bool reservation2f = false;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
