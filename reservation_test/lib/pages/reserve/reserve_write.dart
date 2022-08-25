@@ -1,5 +1,3 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -73,15 +71,31 @@ class ReserveWrite extends StatelessWidget {
                   width: 3,
                 ),
               ),
-              child: Text(
-                overflow: TextOverflow.fade,
-                '12345',
-                style: TextStyle(
-                  height: 1,
-                  color: Colors.black,
-                  fontSize: 16.0,
+              child: GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                child: SingleChildScrollView(
+                  child: TextField(
+                    onChanged: (text) {},
+                    cursorColor: Colors.blue.shade900,
+                    decoration: InputDecoration(
+                      focusedBorder: InputBorder.none,
+                      border: InputBorder.none,
+                      hintText: '이름을 입력하세요',
+                      hintStyle: TextStyle(fontSize: 15.0),
+                    ),
+                    keyboardType: TextInputType.text,
+                  ),
                 ),
               ),
+              // child: Text(
+              //   overflow: TextOverflow.fade,
+              //   '12345',
+              //   style: TextStyle(
+              //     height: 1,
+              //     color: Colors.black,
+              //     fontSize: 16.0,
+              //   ),
+              // ),
             ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10.0),
