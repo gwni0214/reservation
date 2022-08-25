@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:reservation_test/pages/reserve/reserve_modify.dart';
-import 'package:reservation_test/pages/reserve/reserve_view.dart';
-import 'package:reservation_test/pages/reserve/reserve_write.dart';
+// import 'package:get/get.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// import 'package:reservation_test/pages/reserve/reserve_modify.dart';
+// import 'package:reservation_test/pages/reserve/reserve_view.dart';
+// import 'package:reservation_test/pages/reserve/reserve_write.dart';
+import 'thirdFloor.dart';
+import 'secondFloor.dart';
 
 class ReserveMain extends StatelessWidget {
   static const id = '/reserveMain';
@@ -10,7 +13,13 @@ class ReserveMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PageController controller =
+        PageController(initialPage: 0, viewportFraction: 1);
+    bool reservation3f = false;
+    bool reservation2f = false;
+
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('회의실 예약'),
         backgroundColor: Color.fromARGB(
@@ -21,21 +30,13 @@ class ReserveMain extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: PageView(
+        controller: controller,
         children: [
-          TextButton(
-              onPressed: () => Get.toNamed(ReserveWrite.id),
-              child: Text('예약하기')),
-          TextButton(
-              onPressed: () => Get.toNamed(ReserveView.id),
-              child: Text('예약한거 보기')),
-          TextButton(
-              onPressed: () => Get.toNamed(ReserveModify.id),
-              child: Text('예약 수정하기')),
+          ThirdFloor(),
+          SecondFloor(),
         ],
-      )),
+      ),
     );
   }
 }
