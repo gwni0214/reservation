@@ -10,7 +10,7 @@ class SecondFloor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     PageController controller =
-        PageController(initialPage: 0, viewportFraction: 1);
+        PageController(initialPage: 1, viewportFraction: 1);
 
     bool reservCheck = false;
 
