@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:reservation_test/pages/reserve/reserve_modify.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
 
@@ -108,7 +107,691 @@ class ThirdFloor extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                               horizontal: 25.0,
                             ),
-                            primary: Colors.grey.shade300,
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('09:30 ~ 10:00'),
+                              Text('예약가능'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.blue.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('10:00 ~ 10:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('10:30 ~ 11:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('11:00 ~ 11:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('11:30 ~ 12:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('12:00 ~ 12:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('12:30 ~ 13:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('13:00 ~ 13:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('13:30 ~ 14:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('14:00 ~ 14:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('14:30 ~ 15:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('15:00 ~ 15:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('15:30 ~ 16:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('16:00 ~ 16:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('16:30 ~ 17:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('17:00 ~ 17:30'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('17:30 ~ 18:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('18:30 ~ 19:00'),
+                              Text('예약완료'),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: Colors.grey.shade600,
                             textStyle: TextStyle(
                               fontSize: 20.0,
                             ),
