@@ -4,7 +4,6 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_modify.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
-import 'package:reservation_test/pages/reserve/thirdFloor.dart';
 
 class ThirdFloor extends StatelessWidget {
   const ThirdFloor({Key? key}) : super(key: key);
