@@ -9,13 +9,14 @@ class ReserveWrite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ReserveWrite'),
+        title: Text('예약하기'),
         backgroundColor: Color.fromARGB(
           255,
           26,
           35,
           126,
         ),
+        centerTitle: true,
       ),
     );
   }

@@ -9,13 +9,14 @@ class ReserveView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ReserveView'),
+        title: Text('예약 확인'),
         backgroundColor: Color.fromARGB(
           255,
           26,
           35,
           126,
         ),
+        centerTitle: true,
       ),
     );
   }

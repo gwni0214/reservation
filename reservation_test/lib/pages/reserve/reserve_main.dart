@@ -12,13 +12,14 @@ class ReserveMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ReserveMain'),
+        title: Text('회의실 예약'),
         backgroundColor: Color.fromARGB(
           255,
           26,
           35,
           126,
         ),
+        centerTitle: true,
       ),
       body: Center(
           child: Column(
