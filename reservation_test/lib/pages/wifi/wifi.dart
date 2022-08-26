@@ -62,7 +62,7 @@ class Wifi extends StatelessWidget {
                             side: BorderSide(color: Colors.blue.shade900),
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          child: Image.asset('images/wifiqr.png'),
+                          child: Image.asset('images/wifi3f.png'),
                         ),
                       ),
                       SizedBox(
@@ -125,14 +125,14 @@ class Wifi extends StatelessWidget {
                             side: BorderSide(color: Colors.blue.shade900),
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          child: Image.asset('images/wifiqr.png'),
+                          child: Image.asset('images/wifi2f.png'),
                         ),
                       ),
                       SizedBox(
                         height: 20.0,
                       ),
                       Text(
-                        'ThejoinWifi',
+                        'ThejoinLAB_WiFI',
                         style: TextStyle(
                           fontSize: 20.0,
                         ),
