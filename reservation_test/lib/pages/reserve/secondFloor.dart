@@ -98,6 +98,8 @@ class SecondFloor extends StatelessWidget {
                 itemCount: SecondData().SecondDataInfo.length,
                 itemBuilder: (BuildContext context, index) {
                   var time = SecondData().SecondDataInfo[index]['time'];
+                  var reserved = SecondData().SecondDataInfo[index]['reserved'];
+
                   return Row(
                     children: [
                       Container(
@@ -106,28 +108,32 @@ class SecondFloor extends StatelessWidget {
                             horizontal: 15.0, vertical: 10.0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0)),
-                        child: Row(
-                          children: [
-                            Text('asd'),
-                            ElevatedButton(
-                              onPressed: () {
-                                print(time);
-                                if (SecondData().SecondDataInfo[index]
-                                        ['reserved'] ==
-                                    false) {
-                                  Get.toNamed(ReserveWrite.id);
-                                } else {
-                                  Get.toNamed(ReserveView.id);
-                                }
-                              },
-                              child: Row(children: [
-                                Text(
-                                    '${SecondData().SecondDataInfo[index]['time']}')
-                              ]),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (reservCheck == false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (reservCheck == true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('${time}'),
+                              reserved == false ? Text('예약가능') : Text('예약완료')
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
                             ),
-                          ],
+                            primary: Colors.grey.shade600,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   );
                 }),
