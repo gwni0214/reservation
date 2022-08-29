@@ -11,7 +11,7 @@ class MainButton extends StatelessWidget {
     var variable1 = '/wifi';
     var variable2 = 'test11';
     return SizedBox(
-      width: 220.0,
+      width: 200.0,
       height: 50.0,
       child: ElevatedButton(
         onPressed: () {
