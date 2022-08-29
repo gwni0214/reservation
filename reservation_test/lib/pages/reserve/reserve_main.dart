@@ -24,7 +24,7 @@ class ReserveMain extends StatelessWidget {
         centerTitle: true,
       ),
       body: PageView(
-        physics: BouncingScrollPhysics(),
+        scrollBehavior: const ScrollBehavior().copyWith(overscroll: false),
         controller: controller,
         children: [
           ThirdFloor(),

@@ -140,30 +140,32 @@ class ReserveWrite extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: kToolbarHeight,
-                    child: ElevatedButton(
-                      child: Text(
-                        '예약',
-                        style: TextStyle(
-                          fontSize: 22.0,
-                        ),
-                      ),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue.shade900,
-                      ),
-                    ),
-                  ),
-                ),
-              )
+
+              // Expanded(
+              //   child: Align(
+              //     alignment: Alignment.bottomCenter,
+              //     child: SizedBox(
+              //       width: double.infinity,
+              //       height: kToolbarHeight,
+              //       child: ElevatedButton(
+              //         child: Text(
+              //           '예약',
+              //           style: TextStyle(
+              //             fontSize: 22.0,
+              //           ),
+              //         ),
+              //         onPressed: () {},
+              //         style: ElevatedButton.styleFrom(
+              //           primary: Colors.blue.shade900,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
+        bottomNavigationBar: BottomAppBar(),
       ),
     );
   }

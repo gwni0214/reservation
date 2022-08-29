@@ -21,7 +21,7 @@ class Wifi extends StatelessWidget {
         centerTitle: true,
       ),
       body: PageView(
-        physics: BouncingScrollPhysics(),
+        scrollBehavior: const ScrollBehavior().copyWith(overscroll: false),
         children: [
           WifiCard(
             floor: '3층',
