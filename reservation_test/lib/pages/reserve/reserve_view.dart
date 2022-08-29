@@ -168,15 +168,20 @@ class ReserveView extends StatelessWidget {
                       width: 3,
                     ),
                   ),
-                  child: Text(
-                    '예약취소',
-                    style: TextStyle(
-                      height: 1.3,
-                      fontSize: 25.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                  child: InkWell(
+                    onTap: () {
+                      Get.toNamed('/reserveMain');
+                    },
+                    child: Text(
+                      '예약취소',
+                      style: TextStyle(
+                        height: 1.3,
+                        fontSize: 25.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
                 InkWell(
