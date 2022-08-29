@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
