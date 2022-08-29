@@ -80,9 +80,16 @@ class Login extends StatelessWidget {
                                       26,
                                       35,
                                       126,
-                                    )),
+                                    ),),
+
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+                                ),
                               ),
                             ),
+
                             keyboardType: TextInputType.text,
                             controller: userId,
                           ),
@@ -100,7 +107,13 @@ class Login extends StatelessWidget {
                                       26,
                                       35,
                                       126,
-                                    )),
+                                    ),),
+
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+                                ),
                               ),
                             ),
                             keyboardType: TextInputType.text,
