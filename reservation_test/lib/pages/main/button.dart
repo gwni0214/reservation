@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:reservation_test/pages/wifi/wifi.dart';
-import 'package:reservation_test/pages/main/home.dart';
 
 class MainButton extends StatelessWidget {
-  const MainButton({Key? key}) : super(key: key);
+  const MainButton({Key? key, required this.route, required this.title})
+      : super(key: key);
+  final String route;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    var variable1 = '/wifi';
-    var variable2 = 'test11';
     return SizedBox(
       width: 200.0,
       height: 50.0,
       child: ElevatedButton(
         onPressed: () {
-          Link(variable1);
+          Get.toNamed(route);
         },
         style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(
@@ -31,21 +30,13 @@ class MainButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          Title(variable2),
+          title,
           style: TextStyle(
+            height: 1,
             fontSize: 20.0,
           ),
         ),
       ),
     );
   }
-}
-
-Title(String title2) {
-  String title = title2;
-  return title;
-}
-
-Link(String link2) {
-  return Get.toNamed(link2);
 }

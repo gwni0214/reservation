@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // import 'package:get/get.dart';
 
-
 class Wifi extends StatelessWidget {
   static const id = '/wifi';
   const Wifi({Key? key}) : super(key: key);
@@ -52,17 +51,7 @@ class Wifi extends StatelessWidget {
                       SizedBox(
                         height: 20.0,
                       ),
-                      SizedBox(
-                        width: 200.0,
-                        height: 200.0,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.blue.shade900),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Image.asset('images/wifi3f.png'),
-                        ),
-                      ),
+                      imgbox('images/wifi3f.png'),
                       SizedBox(
                         height: 20.0,
                       ),
@@ -115,17 +104,7 @@ class Wifi extends StatelessWidget {
                       SizedBox(
                         height: 20.0,
                       ),
-                      SizedBox(
-                        width: 200.0,
-                        height: 200.0,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(color: Colors.blue.shade900),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Image.asset('images/wifi2f.png'),
-                        ),
-                      ),
+                      imgbox('images/wifi2f.png'),
                       SizedBox(
                         height: 20.0,
                       ),
@@ -153,6 +132,24 @@ class Wifi extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  SizedBox imgbox(String url) {
+    return SizedBox(
+      width: 200.0,
+      height: 200.0,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.blue.shade900)),
+        padding: const EdgeInsets.all(15.0),
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(url), fit: BoxFit.fitWidth)),
+        ),
       ),
     );
   }
