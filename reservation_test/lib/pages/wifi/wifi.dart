@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-// import 'package:dots_indicator/dots_indicator.dart';
-// import 'package:smooth_page_indicator/';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-// import 'AnimatedSmoothIndicator';
+// import 'package:get/get.dart';
+
 
 class Wifi extends StatelessWidget {
   static const id = '/wifi';
