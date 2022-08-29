@@ -165,7 +165,27 @@ class ReserveWrite extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomAppBar(),
+        bottomNavigationBar: BottomAppBar(
+          child: InkWell(
+            onTap: () {
+              Get.toNamed('/reserveView');
+            },
+            child: Container(
+              width: double.infinity,
+              height: 50.0,
+              color: Colors.blue.shade900,
+              child: Text(
+                '예약',
+                style: TextStyle(
+                  height: 1.7,
+                  fontSize: 25.0,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
