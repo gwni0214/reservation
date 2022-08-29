@@ -77,6 +77,7 @@ class ThirdFloor extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
+              physics: BouncingScrollPhysics(),
               shrinkWrap: true,
               children: [
                 Container(
