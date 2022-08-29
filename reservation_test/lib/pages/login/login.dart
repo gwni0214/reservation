@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reservation_test/pages/main/button.dart';
 import 'package:reservation_test/pages/main/home.dart';
 
 class Login extends StatelessWidget {
@@ -74,14 +75,14 @@ class Login extends StatelessWidget {
                               labelText: 'ID를 입력하세요',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    width: 3,
-                                    color: Color.fromARGB(
-                                      255,
-                                      26,
-                                      35,
-                                      126,
-                                    ),),
-
+                                  width: 3,
+                                  color: Color.fromARGB(
+                                    255,
+                                    26,
+                                    35,
+                                    126,
+                                  ),
+                                ),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -101,14 +102,14 @@ class Login extends StatelessWidget {
                               labelText: '비밀번호를 입력하세요',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    width: 3,
-                                    color: Color.fromARGB(
-                                      255,
-                                      26,
-                                      35,
-                                      126,
-                                    ),),
-
+                                  width: 3,
+                                  color: Color.fromARGB(
+                                    255,
+                                    26,
+                                    35,
+                                    126,
+                                  ),
+                                ),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(

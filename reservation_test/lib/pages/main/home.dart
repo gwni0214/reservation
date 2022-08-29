@@ -33,9 +33,8 @@ class Home extends StatelessWidget {
               height: 100.0,
             ),
             SizedBox(
-              width: 200.0,
+              // width: 200.0,
               height: 55.0,
-
               child: ElevatedButton(
                 onPressed: () {
                   Get.toNamed(Wifi.id);
@@ -65,7 +64,7 @@ class Home extends StatelessWidget {
               height: 15.0,
             ),
             SizedBox(
-              width: 200.0,
+              // width: 200.0,
               height: 55.0,
               child: ElevatedButton(
                 onPressed: () {
