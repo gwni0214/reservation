@@ -22,15 +22,17 @@ class Home extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
         ),
-        body: Center(
-            child: Column(
-          children: [
-            SizedBox(height: 100.0),
-            MainButton(route: '/wifi', title: 'WIFI 정보'),
-            SizedBox(height: 15.0),
-            MainButton(route: '/reserveMain', title: '회의실 예약')
-          ],
-        )),
+        body: InkWell(
+          child: Center(
+              child: Column(
+            children: [
+              SizedBox(height: 100.0),
+              MainButton(route: '/wifi', title: 'WIFI 정보'),
+              SizedBox(height: 15.0),
+              MainButton(route: '/reserveMain', title: '회의실 예약')
+            ],
+          )),
+        ),
       ),
     );
   }
