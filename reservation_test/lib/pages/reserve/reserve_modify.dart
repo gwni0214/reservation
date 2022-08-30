@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reservation_test/models/model.dart';
 
 class ReserveModify extends StatelessWidget {
   static const id = '/reserveModify';
-  const ReserveModify({Key? key}) : super(key: key);
-
+  ReserveModify({Key? key}) : super(key: key);
+  var checkedIndex = Get.arguments;
+  final _controller = Get.find<Reservation>();
+  TextEditingController textEditingController = TextEditingController();
+  TextEditingController textEditingController2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +32,7 @@ class ReserveModify extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '3층 회의실',
+                    '${_controller.floorTitle} 회의실',
                     style: TextStyle(
                       fontSize: 30.0,
                     ),
@@ -41,7 +45,7 @@ class ReserveModify extends StatelessWidget {
                     width: double.infinity,
                     height: 40.0,
                     child: Text(
-                      '09:30 ~ 10:00',
+                      '${checkedIndex['time']}',
                       style: TextStyle(
                         height: 1.5,
                         fontSize: 25.0,
@@ -87,10 +91,11 @@ class ReserveModify extends StatelessWidget {
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,
                         border: InputBorder.none,
-                        hintText: '이름을 입력하세요',
+                        hintText: '${checkedIndex['members']}',
                         hintStyle: TextStyle(fontSize: 15.0),
                       ),
                       keyboardType: TextInputType.text,
+                      controller: textEditingController,
                     ),
                   ),
                   Container(
@@ -129,10 +134,11 @@ class ReserveModify extends StatelessWidget {
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,
                         border: InputBorder.none,
-                        hintText: '회의 주제를 입력하세요',
+                        hintText: '${checkedIndex['title']}',
                         hintStyle: TextStyle(fontSize: 15.0),
                       ),
                       keyboardType: TextInputType.text,
+                      controller: textEditingController2,
                     ),
                   ),
                 ],
@@ -142,7 +148,12 @@ class ReserveModify extends StatelessWidget {
           bottomNavigationBar: BottomAppBar(
             child: InkWell(
               onTap: () {
-                Get.toNamed('/reserveView');
+                checkedIndex['time'] = checkedIndex['time'];
+                checkedIndex['members'] = textEditingController.text;
+                checkedIndex['title'] = textEditingController2.text;
+                Get.toNamed(
+                  '/reserveMain',
+                );
               },
               child: Container(
                 width: double.infinity,

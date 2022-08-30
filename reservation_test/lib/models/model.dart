@@ -7,6 +7,7 @@ class Reservation extends GetxController {
   RxBool reserved = false.obs;
   RxString time = ''.obs;
   RxString title = ''.obs;
+  String floorTitle = '2층';
   late RxList firebaseData = [].obs;
 
   //firebase data가져오는함수
@@ -15,26 +16,38 @@ class Reservation extends GetxController {
       {
         "time": "09:00 ~ 09:30",
         "reserved": false,
+        "title": '',
+        "members": '',
       },
       {
         "time": "09:30 ~ 10:00",
         "reserved": true,
+        "title": '',
+        "members": '',
       },
       {
         "time": "10:00 ~ 10:30",
         "reserved": false,
+        "title": '',
+        "members": '',
       },
       {
         "time": "10:30 ~ 11:00",
         "reserved": true,
+        "title": '',
+        "members": '',
       },
       {
         "time": "11:30 ~ 12:00",
         "reserved": false,
+        "title": '',
+        "members": '',
       },
       {
         "time": "12:30 ~ 13:00",
         "reserved": false,
+        "title": '',
+        "members": '',
       },
     ];
   }

@@ -4,36 +4,8 @@ import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
-
-class SecondData {
-  String title = '2층';
-  List SecondDataInfo = [
-    {
-      "time0": "09:00 ~ 09:30",
-      "reserved": false,
-    },
-    {
-      "time1": "09:30 ~ 10:00",
-      "reserved": true,
-    },
-    {
-      "time2": "10:00 ~ 10:30",
-      "reserved": false,
-    },
-    {
-      "time3": "10:30 ~ 11:00",
-      "reserved": false,
-    },
-    {
-      "time4": "11:30 ~ 12:00",
-      "reserved": false,
-    },
-    {
-      "time5": "12:30 ~ 13:00",
-      "reserved": false,
-    },
-  ];
-}
+import 'package:intl/intl.dart';
+import 'dart:developer';
 
 class SecondFloor extends StatelessWidget {
   const SecondFloor({Key? key}) : super(key: key);
@@ -45,8 +17,24 @@ class SecondFloor extends StatelessWidget {
 
     final reservationController = Get.find<Reservation>();
 
+    final nowTime = new DateFormat.Hm().format(new DateTime.now());
     // bool reservCheck = false;
+    setTime() {
+      for (var i = 0; i < reservationController.firebaseData.length; i++) {
+        var item = reservationController.firebaseData[i]['time'].toString();
 
+        var lowTime = item.substring(0, 5);
+        var lowTimeHour = item.substring(0, 2);
+        var lowTimeMin = item.substring(3, 5);
+        var highTime = item.substring(8);
+        log(highTime);
+        // print(lowTime);
+
+        // var compareTime = DateTime().difference(DateTime());
+      }
+    }
+
+    setTime();
     return Center(
       child: Column(
         children: [
@@ -65,7 +53,7 @@ class SecondFloor extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  '${SecondData().title}',
+                  '${reservationController.floorTitle}',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),
@@ -77,7 +65,7 @@ class SecondFloor extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      '09:30 ~ 10:00',
+                      '${nowTime}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,
@@ -128,14 +116,18 @@ class SecondFloor extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             // reservationController.firebaseData[index]['time']
-                            if (SecondData().SecondDataInfo[index]
+                            if (reservationController.firebaseData[index]
                                     ['reserved'] ==
                                 false) {
-                              Get.toNamed(ReserveWrite.id);
-                            } else if (SecondData().SecondDataInfo[index]
+                              Get.toNamed(ReserveWrite.id,
+                                  arguments: reservationController
+                                      .firebaseData[index]);
+                            } else if (reservationController.firebaseData[index]
                                     ['reserved'] ==
                                 true) {
-                              Get.toNamed(ReserveView.id);
+                              Get.toNamed(ReserveView.id,
+                                  arguments: reservationController
+                                      .firebaseData[index]);
                             }
                           },
                           child: Row(

@@ -5,10 +5,11 @@ import 'package:reservation_test/models/model.dart';
 class ReserveWrite extends StatelessWidget {
   static const id = '/reserveWrite';
   ReserveWrite({Key? key}) : super(key: key);
-
+  var checkedIndex = Get.arguments;
   // final controller = Get.put(Reservation());
   // final reservationWriteController = Get.find<Reservation>();
-
+  TextEditingController textEditingController = TextEditingController();
+  TextEditingController textEditingController2 = TextEditingController();
   final _controller = Get.find<Reservation>();
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ReserveWrite extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '3층 회의실',
+                    '${_controller.floorTitle} 회의실',
                     style: TextStyle(
                       fontSize: 30.0,
                     ),
@@ -46,7 +47,7 @@ class ReserveWrite extends StatelessWidget {
                     width: double.infinity,
                     height: 40.0,
                     child: Text(
-                      '${_controller.firebaseData[2]['time']}',
+                      '${checkedIndex['time']}',
                       style: TextStyle(
                         height: 1.5,
                         fontSize: 25.0,
@@ -98,6 +99,7 @@ class ReserveWrite extends StatelessWidget {
                         hintStyle: TextStyle(fontSize: 15.0),
                       ),
                       keyboardType: TextInputType.text,
+                      controller: textEditingController,
                     ),
                   ),
                   Container(
@@ -131,9 +133,9 @@ class ReserveWrite extends StatelessWidget {
                       ),
                     ),
                     child: TextField(
-                      onChanged: (text) {
-                        _controller.title.value = text;
-                      },
+                      // onChanged: (text) {
+                      //   _controller.title.value = text;
+                      // },
                       cursorColor: Colors.blue.shade900,
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,
@@ -142,6 +144,7 @@ class ReserveWrite extends StatelessWidget {
                         hintStyle: TextStyle(fontSize: 15.0),
                       ),
                       keyboardType: TextInputType.text,
+                      controller: textEditingController2,
                     ),
                   ),
 
@@ -173,7 +176,14 @@ class ReserveWrite extends StatelessWidget {
           bottomNavigationBar: BottomAppBar(
             child: InkWell(
               onTap: () {
-                Get.toNamed('/reserveView');
+                checkedIndex['time'] = checkedIndex['time'];
+                checkedIndex['title'] = textEditingController2.text;
+                checkedIndex['members'] = textEditingController.text;
+                checkedIndex['reserved'] = true;
+                // _controller.title.value = textEditingController2.text;
+                // _controller.members.value = textEditingController.text;
+                Get.toNamed('/reserveView', arguments: checkedIndex);
+                print(_controller);
               },
               child: Container(
                 width: double.infinity,

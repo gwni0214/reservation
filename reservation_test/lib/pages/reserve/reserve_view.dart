@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reservation_test/models/model.dart';
 
 class ReserveView extends StatelessWidget {
   static const id = '/reserveView';
-  const ReserveView({Key? key}) : super(key: key);
-
+  ReserveView({Key? key}) : super(key: key);
+  var checkedIndex = Get.arguments;
+  final _controller = Get.find<Reservation>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +30,7 @@ class ReserveView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '3층 회의실',
+                    '${_controller.floorTitle} 회의실',
                     style: TextStyle(
                       fontSize: 30.0,
                     ),
@@ -41,7 +43,7 @@ class ReserveView extends StatelessWidget {
                     width: double.infinity,
                     height: 40.0,
                     child: Text(
-                      '09:30 ~ 10:00',
+                      '${checkedIndex['time']}',
                       style: TextStyle(
                         height: 1.5,
                         fontSize: 25.0,
@@ -89,7 +91,7 @@ class ReserveView extends StatelessWidget {
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,
                         border: InputBorder.none,
-                        hintText: '이름을 입력하세요',
+                        hintText: '${checkedIndex['members']}',
                         hintStyle:
                             TextStyle(fontSize: 15.0, color: Colors.black87),
                       ),
@@ -137,7 +139,7 @@ class ReserveView extends StatelessWidget {
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,
                         border: InputBorder.none,
-                        hintText: '회의 주제를 입력하세요',
+                        hintText: '${checkedIndex['title']}',
                         hintStyle:
                             TextStyle(fontSize: 15.0, color: Colors.black87),
                       ),
@@ -166,6 +168,9 @@ class ReserveView extends StatelessWidget {
                     // ),
                     child: InkWell(
                       onTap: () {
+                        checkedIndex['reserved'] = false;
+                        checkedIndex['title'] = '';
+                        checkedIndex['members'] = '';
                         Get.toNamed('/reserveMain');
                       },
                       child: Text(
@@ -182,7 +187,7 @@ class ReserveView extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.toNamed('/reserveModify');
+                      Get.toNamed('/reserveModify', arguments: checkedIndex);
                     },
                     child: Text(
                       '수정',
