@@ -124,11 +124,11 @@ class Login extends StatelessWidget {
                             height: 15.0,
                           ),
                           SizedBox(
-                            width: 100.0,
+                            width: 300.0,
                             height: 50.0,
                             child: ButtonTheme(
-                              minWidth: 100.0,
-                              height: 30.0,
+                              minWidth: 300.0,
+                              height: 50.0,
                               child: ElevatedButton(
                                 onPressed: () {
                                   if (userId.text == "thejoin" &&
@@ -161,7 +161,12 @@ class Login extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                child: Text('로그인'),
+                                child: Text(
+                                  '로그인',
+                                  style: TextStyle(
+                                    fontSize: 19.0,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
