@@ -37,6 +37,8 @@ dependencies:
   smooth_page_indicator:
   cloud_firestore:
   intl:
+  direct_select:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

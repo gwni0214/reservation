@@ -49,6 +49,30 @@ class Reservation extends GetxController {
         "title": '',
         "members": '',
       },
+      {
+        "time": "19:00 ~ 19:30",
+        "reserved": false,
+        "title": '',
+        "members": '',
+      },
+      {
+        "time": "19:30 ~ 20:00",
+        "reserved": false,
+        "title": '',
+        "members": '',
+      },
+      {
+        "time": "20:00 ~ 20:30",
+        "reserved": false,
+        "title": '',
+        "members": '',
+      },
+      {
+        "time": "20:30 ~ 21:00",
+        "reserved": false,
+        "title": '',
+        "members": '',
+      },
     ];
   }
 

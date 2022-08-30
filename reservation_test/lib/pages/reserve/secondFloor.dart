@@ -19,15 +19,39 @@ class SecondFloor extends StatelessWidget {
 
     final nowTime = new DateFormat.Hm().format(new DateTime.now());
     // bool reservCheck = false;
+    var maxM;
+    var minus;
+    var nowIndexTime;
+    var nowReserved;
     setTime() {
       for (var i = 0; i < reservationController.firebaseData.length; i++) {
         var item = reservationController.firebaseData[i]['time'].toString();
-
+        var reserved = reservationController.firebaseData[i]['reserved'];
         var lowTime = item.substring(0, 5);
-        var lowTimeHour = item.substring(0, 2);
-        var lowTimeMin = item.substring(3, 5);
+        var lowTimeHour = int.parse(item.substring(0, 2));
+        var lowTimeMin = int.parse(item.substring(3, 5));
         var highTime = item.substring(8);
-        log(highTime);
+        var highTimeHour = int.parse(item.substring(0, 2));
+        var highTimeMin = int.parse(item.substring(3, 5));
+        var nowTimeHour = int.parse(nowTime.substring(0, 2));
+        var nowTimeMin = int.parse(nowTime.substring(3, 5));
+
+        if (nowTimeMin >= 30) {
+          maxM = 60;
+        } else if (nowTimeMin >= 0 && nowTimeMin <= 30) {
+          maxM = 30;
+        }
+        minus = maxM - nowTimeMin;
+        if (lowTimeHour == nowTimeHour) {
+          nowIndexTime = item;
+          nowReserved = reserved;
+          return;
+        }
+        // log("${nowIndexTime}");
+        // log("${lowTimeHour}");
+        // log("${maxM}");
+        // log('${asd}');
+        // print(asd);
         // print(lowTime);
 
         // var compareTime = DateTime().difference(DateTime());
@@ -65,14 +89,14 @@ class SecondFloor extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      '${nowTime}',
+                      '${nowIndexTime}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,
                       ),
                     ),
                     Text(
-                      '18분 남음',
+                      '${minus}분 남음',
                       style: TextStyle(
                         fontSize: 25.0,
                       ),
@@ -83,11 +107,11 @@ class SecondFloor extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  '사용중',
+                  nowReserved ? '사용중' : '사용가능',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),
-                ),
+                )
               ],
             ),
           ),

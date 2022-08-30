@@ -23,6 +23,13 @@ class ReserveView extends StatelessWidget {
               126,
             ),
             centerTitle: true,
+            leading: IconButton(
+              icon: Icon(Icons.list_alt),
+              onPressed: () {
+                Get.toNamed('/reserveMain');
+              },
+              tooltip: '예약 확인',
+            ),
           ),
           body: SingleChildScrollView(
             child: Container(
