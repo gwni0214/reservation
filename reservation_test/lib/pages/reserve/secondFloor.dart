@@ -44,7 +44,7 @@ class SecondFloor extends StatelessWidget {
         PageController(initialPage: 1, viewportFraction: 1);
     final reservationController = Get.find<Reservation>();
 
-    bool reservCheck = false;
+    // bool reservCheck = false;
 
     return Center(
       child: Column(

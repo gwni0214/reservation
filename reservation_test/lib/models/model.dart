@@ -26,7 +26,7 @@ class Reservation extends GetxController {
       },
       {
         "time": "10:30 ~ 11:00",
-        "reserved": false,
+        "reserved": true,
       },
       {
         "time": "11:30 ~ 12:00",

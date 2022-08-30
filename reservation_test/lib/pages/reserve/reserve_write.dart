@@ -7,6 +7,7 @@ class ReserveWrite extends StatelessWidget {
   ReserveWrite({Key? key}) : super(key: key);
 
   // final controller = Get.put(Reservation());
+  // final reservationWriteController = Get.find<Reservation>();
 
   final _controller = Get.find<Reservation>();
   @override
@@ -45,7 +46,7 @@ class ReserveWrite extends StatelessWidget {
                     width: double.infinity,
                     height: 40.0,
                     child: Text(
-                      '09:30 ~ 10:00',
+                      '${_controller.firebaseData[2]['time']}',
                       style: TextStyle(
                         height: 1.5,
                         fontSize: 25.0,
