@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:reservation_test/models/model.dart';
 import 'thirdFloor.dart';
 import 'secondFloor.dart';
 
 class ReserveMain extends StatelessWidget {
   static const id = '/reserveMain';
-  const ReserveMain({Key? key}) : super(key: key);
+  ReserveMain({Key? key}) : super(key: key);
+
+  final controller = Get.put(Reservation());
 
   @override
   Widget build(BuildContext context) {

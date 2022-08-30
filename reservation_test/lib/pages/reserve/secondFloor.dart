@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
@@ -41,6 +42,7 @@ class SecondFloor extends StatelessWidget {
   Widget build(BuildContext context) {
     PageController controller =
         PageController(initialPage: 1, viewportFraction: 1);
+    final reservationController = Get.find<Reservation>();
 
     bool reservCheck = false;
 
@@ -109,56 +111,60 @@ class SecondFloor extends StatelessWidget {
             behavior: const ScrollBehavior().copyWith(overscroll: false),
             child: Expanded(
               child: ListView.builder(
-                  itemCount: SecondData().SecondDataInfo.length,
+                  itemCount: reservationController.firebaseData.length,
                   itemBuilder: (BuildContext context, index) {
-                    var time = SecondData().SecondDataInfo[index]['time$index'];
-                    var reserved =
-                        SecondData().SecondDataInfo[index]['reserved'];
+                    // var time = SecondData().SecondDataInfo[index]['time$index'];
+                    // var reserved =
+                    //     SecondData().SecondDataInfo[index]['reserved'];
 
-                    return Row(
-                      children: [
-                        Container(
-                          height: 45.0,
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 15.0, vertical: 10.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              if (SecondData().SecondDataInfo[index]
-                                      ['reserved'] ==
-                                  false) {
-                                Get.toNamed(ReserveWrite.id);
-                              } else if (SecondData().SecondDataInfo[index]
-                                      ['reserved'] ==
-                                  true) {
-                                Get.toNamed(ReserveView.id);
-                              }
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text('${time}'),
-                                reserved == false ? Text('예약가능') : Text('예약완료')
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 25.0,
-                              ),
-                              primary: SecondData().SecondDataInfo[index]
+                    return Obx(() {
+                      return Container(
+                        height: 45.0,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 15.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // reservationController.firebaseData[index]['time']
+                            if (SecondData().SecondDataInfo[index]
+                                    ['reserved'] ==
+                                false) {
+                              Get.toNamed(ReserveWrite.id);
+                            } else if (SecondData().SecondDataInfo[index]
+                                    ['reserved'] ==
+                                true) {
+                              Get.toNamed(ReserveView.id);
+                            }
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                  '${reservationController.firebaseData[index]['time']}'),
+                              reservationController.firebaseData[index]
                                           ['reserved'] ==
-                                      true
-                                  ? Colors.grey.shade600
-                                  : Colors.blue.shade400,
-                              textStyle: TextStyle(
-                                fontSize: 20.0,
-                              ),
+                                      false
+                                  ? Text('예약가능')
+                                  : Text('예약완료')
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25.0,
+                            ),
+                            primary: reservationController.firebaseData[index]
+                                        ['reserved'] ==
+                                    true
+                                ? Colors.grey.shade600
+                                : Colors.blue.shade400,
+                            textStyle: TextStyle(
+                              fontSize: 20.0,
                             ),
                           ),
                         ),
-                      ],
-                    );
+                      );
+                    });
                   }),
 
               // ListView(
