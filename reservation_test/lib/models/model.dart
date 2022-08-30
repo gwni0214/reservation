@@ -1,7 +1,10 @@
-class Todo {
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class Reservation {
   List members;
   bool reserved;
   String time;
   String title;
-  Todo(this.title, this.time, this.reserved, this.members);
+
+  Reservation(this.title, this.time, this.reserved, this.members);
 }

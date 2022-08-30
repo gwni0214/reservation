@@ -162,12 +162,12 @@ class ReserveView extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.blue.shade100,
-                      width: 3,
-                    ),
-                  ),
+                  // decoration: BoxDecoration(
+                  //   border: Border.all(
+                  //     color: Colors.blue.shade100,
+                  //     width: 3,
+                  //   ),
+                  // ),
                   child: InkWell(
                     onTap: () {
                       Get.toNamed('/reserveMain');

@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
@@ -127,9 +125,13 @@ class SecondFloor extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0)),
                           child: ElevatedButton(
                             onPressed: () {
-                              if (reservCheck == false) {
+                              if (SecondData().SecondDataInfo[index]
+                                      ['reserved'] ==
+                                  false) {
                                 Get.toNamed(ReserveWrite.id);
-                              } else if (reservCheck == true) {
+                              } else if (SecondData().SecondDataInfo[index]
+                                      ['reserved'] ==
+                                  true) {
                                 Get.toNamed(ReserveView.id);
                               }
                             },
@@ -144,7 +146,11 @@ class SecondFloor extends StatelessWidget {
                               padding: EdgeInsets.symmetric(
                                 horizontal: 25.0,
                               ),
-                              primary: Colors.grey.shade600,
+                              primary: SecondData().SecondDataInfo[index]
+                                          ['reserved'] ==
+                                      true
+                                  ? Colors.grey.shade600
+                                  : Colors.blue.shade400,
                               textStyle: TextStyle(
                                 fontSize: 20.0,
                               ),

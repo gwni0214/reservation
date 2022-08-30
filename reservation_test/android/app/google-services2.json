@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "385343833045",
-    "project_id": "reservation-4d0ee",
-    "storage_bucket": "reservation-4d0ee.appspot.com"
+    "project_number": "308591539643",
+    "project_id": "thejoin-reservation",
+    "storage_bucket": "thejoin-reservation.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:385343833045:android:f1cb73ab2f1bf51c0e735c",
+        "mobilesdk_app_id": "1:308591539643:android:c1724d3158a24d7119009e",
         "android_client_info": {
           "package_name": "com.example.reservation_test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "385343833045-mod500k0bn329vsahaa4rmfou1ne66nf.apps.googleusercontent.com",
+          "client_id": "308591539643-st2aj9ru12cd3m0h23jbnuu5f4gb9num.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9OV64xwt2IsHfXUiL83Q8PrgsQQjea80"
+          "current_key": "AIzaSyDS1jutLz167UmfROzDwPyvODGlyJrTq-g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "385343833045-mod500k0bn329vsahaa4rmfou1ne66nf.apps.googleusercontent.com",
+              "client_id": "308591539643-st2aj9ru12cd3m0h23jbnuu5f4gb9num.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
