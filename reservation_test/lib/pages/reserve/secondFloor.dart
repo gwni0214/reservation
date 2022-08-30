@@ -42,6 +42,7 @@ class SecondFloor extends StatelessWidget {
   Widget build(BuildContext context) {
     PageController controller =
         PageController(initialPage: 1, viewportFraction: 1);
+
     final reservationController = Get.find<Reservation>();
 
     // bool reservCheck = false;

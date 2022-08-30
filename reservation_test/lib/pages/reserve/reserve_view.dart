@@ -10,20 +10,20 @@ class ReserveView extends StatelessWidget {
     return SafeArea(
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
-        child: SingleChildScrollView(
-          child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            appBar: AppBar(
-              title: Text('예약 확인'),
-              backgroundColor: Color.fromARGB(
-                255,
-                26,
-                35,
-                126,
-              ),
-              centerTitle: true,
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            title: Text('예약 확인'),
+            backgroundColor: Color.fromARGB(
+              255,
+              26,
+              35,
+              126,
             ),
-            body: Container(
+            centerTitle: true,
+          ),
+          body: SingleChildScrollView(
+            child: Container(
               padding: EdgeInsets.all(20.0),
               child: Column(
                 children: [
@@ -38,7 +38,7 @@ class ReserveView extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Text(
                       '09:30 ~ 10:00',
@@ -53,7 +53,7 @@ class ReserveView extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Center(
                       child: Text(
@@ -69,8 +69,8 @@ class ReserveView extends StatelessWidget {
                     color: Colors.blue.shade900,
                   ),
                   Container(
-                    width: 500.0,
-                    height: 70.0,
+                    width: double.infinity,
+                    // height: 70.0,
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                     decoration: BoxDecoration(
@@ -98,7 +98,7 @@ class ReserveView extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Center(
                       child: Text(
@@ -114,8 +114,8 @@ class ReserveView extends StatelessWidget {
                     color: Colors.blue.shade900,
                   ),
                   Container(
-                    width: 500.0,
-                    height: 70.0,
+                    width: double.infinity,
+                    // height: 70.0,
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                     decoration: BoxDecoration(
@@ -147,44 +147,29 @@ class ReserveView extends StatelessWidget {
                 ],
               ),
             ),
-            bottomNavigationBar: BottomAppBar(
-              child: Container(
-                width: double.infinity,
-                height: 50.0,
-                color: Colors.blue.shade900,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      // decoration: BoxDecoration(
-                      //   border: Border.all(
-                      //     color: Colors.blue.shade100,
-                      //     width: 3,
-                      //   ),
-                      // ),
-                      child: InkWell(
-                        onTap: () {
-                          Get.toNamed('/reserveMain');
-                        },
-                        child: Text(
-                          '예약취소',
-                          style: TextStyle(
-                            height: 1.3,
-                            fontSize: 25.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                    InkWell(
+          ),
+          bottomNavigationBar: BottomAppBar(
+            child: Container(
+              width: double.infinity,
+              height: 50.0,
+              color: Colors.blue.shade900,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    // decoration: BoxDecoration(
+                    //   border: Border.all(
+                    //     color: Colors.blue.shade100,
+                    //     width: 3,
+                    //   ),
+                    // ),
+                    child: InkWell(
                       onTap: () {
-                        Get.toNamed('/reserveModify');
+                        Get.toNamed('/reserveMain');
                       },
                       child: Text(
-                        '수정',
+                        '예약취소',
                         style: TextStyle(
                           height: 1.3,
                           fontSize: 25.0,
@@ -194,8 +179,23 @@ class ReserveView extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed('/reserveModify');
+                    },
+                    child: Text(
+                      '수정',
+                      style: TextStyle(
+                        height: 1.3,
+                        fontSize: 25.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

@@ -10,20 +10,20 @@ class ReserveModify extends StatelessWidget {
     return SafeArea(
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
-        child: SingleChildScrollView(
-          child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            appBar: AppBar(
-              title: Text('예약 수정하기'),
-              backgroundColor: Color.fromARGB(
-                255,
-                26,
-                35,
-                126,
-              ),
-              centerTitle: true,
+        child: Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            title: Text('예약 수정하기'),
+            backgroundColor: Color.fromARGB(
+              255,
+              26,
+              35,
+              126,
             ),
-            body: Container(
+            centerTitle: true,
+          ),
+          body: SingleChildScrollView(
+            child: Container(
               padding: EdgeInsets.all(20.0),
               child: Column(
                 children: [
@@ -38,7 +38,7 @@ class ReserveModify extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Text(
                       '09:30 ~ 10:00',
@@ -53,7 +53,7 @@ class ReserveModify extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Center(
                       child: Text(
@@ -69,8 +69,8 @@ class ReserveModify extends StatelessWidget {
                     color: Colors.blue.shade900,
                   ),
                   Container(
-                    width: 500.0,
-                    height: 70.0,
+                    width: double.infinity,
+                    // height: 70.0,
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                     decoration: BoxDecoration(
@@ -95,7 +95,7 @@ class ReserveModify extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 500.0,
+                    width: double.infinity,
                     height: 40.0,
                     child: Center(
                       child: Text(
@@ -111,8 +111,8 @@ class ReserveModify extends StatelessWidget {
                     color: Colors.blue.shade900,
                   ),
                   Container(
-                    width: 500.0,
-                    height: 70.0,
+                    width: double.infinity,
+                    // height: 70.0,
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
                     decoration: BoxDecoration(
@@ -138,25 +138,25 @@ class ReserveModify extends StatelessWidget {
                 ],
               ),
             ),
-            bottomNavigationBar: BottomAppBar(
-              child: InkWell(
-                onTap: () {
-                  Get.toNamed('/reserveView');
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 50.0,
-                  color: Colors.blue.shade900,
-                  child: Text(
-                    '수정하기',
-                    style: TextStyle(
-                      height: 1.7,
-                      fontSize: 25.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    textAlign: TextAlign.center,
+          ),
+          bottomNavigationBar: BottomAppBar(
+            child: InkWell(
+              onTap: () {
+                Get.toNamed('/reserveView');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50.0,
+                color: Colors.blue.shade900,
+                child: Text(
+                  '수정하기',
+                  style: TextStyle(
+                    height: 1.7,
+                    fontSize: 25.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
