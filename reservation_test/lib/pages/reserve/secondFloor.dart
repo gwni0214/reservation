@@ -21,8 +21,9 @@ class SecondFloor extends StatelessWidget {
     // bool reservCheck = false;
     var maxM;
     var minus;
-    var nowIndexTime;
+    List nowIndexTime = [];
     var nowReserved;
+    var nowM;
     setTime() {
       for (var i = 0; i < reservationController.firebaseData.length; i++) {
         var item = reservationController.firebaseData[i]['time'].toString();
@@ -43,11 +44,15 @@ class SecondFloor extends StatelessWidget {
         }
         minus = maxM - nowTimeMin;
         if (lowTimeHour == nowTimeHour) {
-          nowIndexTime = item;
+          nowIndexTime.add(item);
+          log("${nowIndexTime}");
           nowReserved = reserved;
-          return;
         }
+        log("${nowTimeMin}");
+        nowM = nowTimeMin;
         // log("${nowIndexTime}");
+        // print(nowIndexTime);
+
         // log("${lowTimeHour}");
         // log("${maxM}");
         // log('${asd}');
@@ -89,7 +94,7 @@ class SecondFloor extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      '${nowIndexTime}',
+                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,
