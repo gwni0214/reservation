@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reservation_test/models/model.dart';
-import 'package:direct_select/direct_select.dart';
 import 'dart:developer';
+import 'package:reservation_test/modules/scroll.dart';
 
 class ReserveWrite extends StatelessWidget {
   static const id = '/reserveWrite';
-  ReserveWrite({Key? key}) : super(key: key);
   var checkedIndex = Get.arguments;
-  // final controller = Get.put(Reservation());
-  // final reservationWriteController = Get.find<Reservation>();
-  TextEditingController textEditingController = TextEditingController();
-  TextEditingController textEditingController2 = TextEditingController();
-  final _controller = Get.find<Reservation>();
-  final elements1 = [];
-  int selectedIndex1 = 0;
-  setPicker() {
-    for (var i = 0; i < _controller.firebaseData.length; i++) {
-      var item = _controller.firebaseData[i]['time'].toString();
-      elements1.add(item);
-    }
-    log("${elements1}");
-  }
+  ReserveWrite({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    setPicker();
+    TextEditingController textEditingController = TextEditingController();
+    TextEditingController textEditingController2 = TextEditingController();
+    final _controller = Get.find<Reservation>();
+    List selectList = [];
+    int selectedIndex1 = 0;
+    setPickerList() {
+      for (var i = 0; i < _controller.firebaseData.length; i++) {
+        var item = _controller.firebaseData[i]['time'].toString();
+        selectList.add(item);
+      }
+    }
+
+    setPickerList();
+
     return SafeArea(
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -57,30 +56,20 @@ class ReserveWrite extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: double.infinity,
-                    height: 40.0,
-                    child: DirectSelect(
-                        selectedIndex: selectedIndex1,
-                        items: _buildItems1(),
-                        onSelectedItemChanged: (index) {
-                          selectedIndex1 = index!;
-                        },
-                        itemExtent: 35.0,
-                        child: MySelectionItem(
-                          isForList: false,
-                          title: elements1[selectedIndex1],
-                        )),
-                    // Text(
-                    //   '${checkedIndex['time']}',
-                    //   style: TextStyle(
-                    //     height: 1.5,
-                    //     fontSize: 25.0,
-                    //     color: Colors.white,
-                    //   ),
-                    //   textAlign: TextAlign.center,
-                    // ),
-                    // color: Colors.blue.shade900,
+                    width: 200,
+                    height: 130.0,
+                    child: Text(
+                      '${checkedIndex['time']}',
+                      style: TextStyle(
+                        height: 1.5,
+                        fontSize: 25.0,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    color: Colors.blue.shade900,
                   ),
+                  TestPage(),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
                     width: double.infinity,
@@ -228,54 +217,6 @@ class ReserveWrite extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  List<Widget> _buildItems1() {
-    return elements1
-        .map((val) => MySelectionItem(
-              title: val,
-            ))
-        .toList();
-  }
-}
-
-class MySelectionItem extends StatelessWidget {
-  final String title;
-  final bool isForList;
-
-  const MySelectionItem({Key? key, required this.title, this.isForList = true})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60.0,
-      child: isForList
-          ? Padding(
-              child: _buildItem(context),
-              padding: EdgeInsets.all(10.0),
-            )
-          : Card(
-              margin: EdgeInsets.symmetric(horizontal: 10.0),
-              child: Stack(
-                children: <Widget>[
-                  _buildItem(context),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Icon(Icons.arrow_drop_down),
-                  )
-                ],
-              ),
-            ),
-    );
-  }
-
-  _buildItem(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      alignment: Alignment.center,
-      child: Text(title),
     );
   }
 }

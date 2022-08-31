@@ -45,10 +45,10 @@ class SecondFloor extends StatelessWidget {
         minus = maxM - nowTimeMin;
         if (lowTimeHour == nowTimeHour) {
           nowIndexTime.add(item);
-          log("${nowIndexTime}");
+          // log("${nowIndexTime}");
           nowReserved = reserved;
         }
-        log("${nowTimeMin}");
+        // log("${nowTimeMin}");
         nowM = nowTimeMin;
         // log("${nowIndexTime}");
         // print(nowIndexTime);
