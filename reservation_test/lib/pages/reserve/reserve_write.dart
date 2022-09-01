@@ -47,7 +47,7 @@ class ReserveWrite extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '${_controller.floorTitle} 회의실',
+                    '${_controller.floorTitle3f} 회의실',
                     style: TextStyle(
                       fontSize: 30.0,
                     ),
@@ -57,8 +57,8 @@ class ReserveWrite extends StatelessWidget {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
-                    width: 200,
-                    height: 130.0,
+                    width: double.infinity,
+                    height: 40.0,
                     child: Text(
                       '${checkedIndex['time']}',
                       style: TextStyle(
@@ -161,28 +161,6 @@ class ReserveWrite extends StatelessWidget {
                       controller: textEditingController2,
                     ),
                   ),
-
-                  // Expanded(
-                  //   child: Align(
-                  //     alignment: Alignment.bottomCenter,
-                  //     child: SizedBox(
-                  //       width: double.infinity,
-                  //       height: kToolbarHeight,
-                  //       child: ElevatedButton(
-                  //         child: Text(
-                  //           '예약',
-                  //           style: TextStyle(
-                  //             fontSize: 22.0,
-                  //           ),
-                  //         ),
-                  //         onPressed: () {},
-                  //         style: ElevatedButton.styleFrom(
-                  //           primary: Colors.blue.shade900,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // )
                 ],
               ),
             ),
