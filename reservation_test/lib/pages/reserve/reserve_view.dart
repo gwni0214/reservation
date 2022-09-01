@@ -5,7 +5,7 @@ import 'package:reservation_test/models/model.dart';
 class ReserveView extends StatelessWidget {
   static const id = '/reserveView';
   ReserveView({Key? key}) : super(key: key);
-  var checkedIndex = Get.arguments;
+  dynamic checkedIndex = Get.arguments;
   final _controller = Get.find<Reservation>();
   @override
   Widget build(BuildContext context) {

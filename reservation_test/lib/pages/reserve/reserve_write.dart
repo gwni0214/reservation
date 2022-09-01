@@ -9,7 +9,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 class ReserveWrite extends StatelessWidget {
   static const id = '/reserveWrite';
-  var checkedIndex = Get.arguments;
+  dynamic checkedIndex = Get.arguments;
   ReserveWrite({Key? key}) : super(key: key);
 
   @override
