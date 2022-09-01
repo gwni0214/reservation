@@ -9,11 +9,12 @@ class Reservation extends GetxController {
   RxString time = ''.obs;
   RxString title = ''.obs;
   String floorTitle = '2층';
+  String floorTitle3f = '3층';
   late RxList firebaseData = [].obs;
 
   //firebase data가져오는함수
   getData() {
-    List arr = [
+    firebaseData.value = [
       {
         "time": "09:00 ~ 09:30",
         "reserved": false,
@@ -180,7 +181,7 @@ class Reservation extends GetxController {
     // TODO: implement onInit
     super.onInit();
     //firebase data 가져오기
-    // getData();
+    getData();
     readFireData();
   }
 
