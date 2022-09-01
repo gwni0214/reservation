@@ -172,7 +172,7 @@ class Reservation extends GetxController {
   readFireData() {
     final ref = FirebaseFirestore.instance.collection('secondFloor');
 
-    ref.get().then((value) => {log("${(value.docs)}")});
+    ref.get().then((value) => {log("123123${(value.docs)}")});
   }
 
   @override
