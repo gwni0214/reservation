@@ -94,7 +94,8 @@ class SecondFloor extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
+                      "asd",
+                      // nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,
@@ -112,7 +113,8 @@ class SecondFloor extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  nowReserved ? '사용중' : '사용가능',
+                  "사용가능",
+                  // nowReserved ? '사용중' : '사용가능',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),

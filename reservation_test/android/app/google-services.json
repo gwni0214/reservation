@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "385343833045",
-    "project_id": "reservation-4d0ee",
-    "storage_bucket": "reservation-4d0ee.appspot.com"
+    "project_number": "17739122534",
+    "project_id": "reservation-5cd4b",
+    "storage_bucket": "reservation-5cd4b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:385343833045:android:f1cb73ab2f1bf51c0e735c",
+        "mobilesdk_app_id": "1:17739122534:android:c40863bd5670985da42aa7",
         "android_client_info": {
           "package_name": "com.example.reservation_test"
         }
       },
       "oauth_client": [
         {
-          "client_id": "385343833045-mod500k0bn329vsahaa4rmfou1ne66nf.apps.googleusercontent.com",
+          "client_id": "17739122534-5l1dhuoiinucqn1bj3qmrgmi8cnae51d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9OV64xwt2IsHfXUiL83Q8PrgsQQjea80"
+          "current_key": "AIzaSyAz0OQkqcZJO7BGuOSKQLun76Zz0sx_tg8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "385343833045-mod500k0bn329vsahaa4rmfou1ne66nf.apps.googleusercontent.com",
+              "client_id": "17739122534-5l1dhuoiinucqn1bj3qmrgmi8cnae51d.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "17739122534-hn3dvkuj5dngeosh7jqta9q745isgq58.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.reservationTest"
+              }
             }
           ]
         }

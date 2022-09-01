@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reservation_test/models/model.dart';
 import 'dart:developer';
-import 'package:reservation_test/modules/scroll.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:reservation_test/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+// import 'package:reservation_test/modules/scroll.dart';
 
 class ReserveWrite extends StatelessWidget {
   static const id = '/reserveWrite';
@@ -14,16 +17,14 @@ class ReserveWrite extends StatelessWidget {
     TextEditingController textEditingController = TextEditingController();
     TextEditingController textEditingController2 = TextEditingController();
     final _controller = Get.find<Reservation>();
-    List selectList = [];
-    int selectedIndex1 = 0;
-    setPickerList() {
-      for (var i = 0; i < _controller.firebaseData.length; i++) {
-        var item = _controller.firebaseData[i]['time'].toString();
-        selectList.add(item);
-      }
+    readFireData() {
+      final ref = FirebaseFirestore.instance
+          .collection('reservation')
+          .doc('secondFloor');
+      ref.get().then((value) => {print(value.data())});
     }
 
-    setPickerList();
+    readFireData();
 
     return SafeArea(
       child: GestureDetector(
@@ -69,7 +70,7 @@ class ReserveWrite extends StatelessWidget {
                     ),
                     color: Colors.blue.shade900,
                   ),
-                  TestPage(),
+                  // TestPage(),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),
                     width: double.infinity,

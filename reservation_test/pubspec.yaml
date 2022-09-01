@@ -39,6 +39,7 @@ dependencies:
   intl:
   numberpicker:
   flutter_material_pickers:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:
