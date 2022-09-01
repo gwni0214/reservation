@@ -10,6 +10,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController userId = TextEditingController();
     final TextEditingController userPw = TextEditingController();
+    final _formKey = GlobalKey<FormState>();
 
     return Scaffold(
       // appBar: AppBar(
@@ -72,6 +73,45 @@ class Login extends StatelessWidget {
                             "ID를 입력하세요",
                             userId,
                           ),
+                          // Column(
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //   children: [
+                          //     TextField(
+                          //       controller: userId,
+                          //       onChanged: (value) {},
+                          //       decoration: InputDecoration(
+                          //         labelText: 'ID를 입력하세요',
+                          //         enabledBorder: OutlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             width: 3,
+                          //             color: Color.fromARGB(
+                          //               255,
+                          //               26,
+                          //               35,
+                          //               126,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //         focusedBorder: UnderlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             color: Colors.grey,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //       keyboardType: TextInputType.text,
+                          //     ),
+                          //     Visibility(
+                          //       visible: userId.text == '',
+                          //       child: Text(
+                          //         '글자를 입력하세요',
+                          //         style: TextStyle(
+                          //           fontSize: 11.0,
+                          //           color: Colors.redAccent,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           SizedBox(
                             height: 15.0,
                           ),
@@ -79,6 +119,53 @@ class Login extends StatelessWidget {
                             "비밀번호를 입력하세요",
                             userPw,
                           ),
+                          // Column(
+                          //   crossAxisAlignment: CrossAxisAlignment.start,
+                          //   children: [
+                          //     TextField(
+                          //       controller: userPw,
+                          //       // key: _formKey,
+                          //       // validator: (String? value) {
+                          //       //   if (value == null || value.isEmpty) {
+                          //       //     return '글자를 입력하세요';
+                          //       //   }
+                          //       //   return 'test';
+                          //       // },
+                          //       onChanged: (value) {},
+                          //       decoration: InputDecoration(
+                          //         labelText: '비밀번호를 입력하세요',
+                          //         enabledBorder: OutlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             width: 3,
+                          //             color: Color.fromARGB(
+                          //               255,
+                          //               26,
+                          //               35,
+                          //               126,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //         focusedBorder: UnderlineInputBorder(
+                          //           borderSide: BorderSide(
+                          //             color: Colors.grey,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //       keyboardType: TextInputType.text,
+                          //       obscureText: true,
+                          //     ),
+                          //     Visibility(
+                          //       visible: userPw.text == '',
+                          //       child: Text(
+                          //         '글자를 입력하세요',
+                          //         style: TextStyle(
+                          //           fontSize: 11.0,
+                          //           color: Colors.redAccent,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           SizedBox(
                             height: 15.0,
                           ),
@@ -90,6 +177,9 @@ class Login extends StatelessWidget {
                               height: 50.0,
                               child: ElevatedButton(
                                 onPressed: () {
+                                  // if (_formKey.currentState.validate()) {
+                                  //   print('검증통과');
+                                  // }
                                   if (userId.text == "thejoin" &&
                                       userPw.text == "1234") {
                                     Get.offAllNamed(Home.id);
