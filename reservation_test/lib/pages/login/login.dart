@@ -72,7 +72,7 @@ class Login extends StatelessWidget {
                             height: 30.0,
                           ),
                           InputForm(
-                            label: 'id를 입력하세요',
+                            label: '아이디를 입력하세요',
                             onChange: (value) {
                               userId = value;
                             },
@@ -81,7 +81,7 @@ class Login extends StatelessWidget {
                             height: 15.0,
                           ),
                           InputForm(
-                            label: 'Pw를 입력하세요',
+                            label: '비밀번호를 입력하세요',
                             onChange: (value) {
                               userPassword = value;
                             },
