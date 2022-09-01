@@ -1,17 +1,22 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+// import 'package:reservation_test/models/model.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:reservation_test/pages/reserve/reserve_view.dart';
+import 'package:reservation_test/pages/reserve/reserve_write.dart';
+import 'package:intl/intl.dart';
+import 'dart:developer';
 import 'package:reservation_test/models/second_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class MessageListScreen extends StatefulWidget {
-  const MessageListScreen({Key? key}) : super(key: key);
+class SecondFloor extends StatefulWidget {
+  const SecondFloor({Key? key}) : super(key: key);
 
   @override
-  State<MessageListScreen> createState() => _MessageListScreenState();
+  State<SecondFloor> createState() => _SecondFloorState();
 }
 
-class _MessageListScreenState extends State<MessageListScreen> {
+class _SecondFloorState extends State<SecondFloor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,12 +67,8 @@ class _MessageListScreenState extends State<MessageListScreen> {
         querySnapshot.docs.forEach((element) {
           //해당 컬렉션에 존재하는 모든 docs를 순회하며 messages 에 데이터를 추가한다.
           messages.add(SecondModel.fromMap(
-              id: element.id,
-              map: element.data() as Map<String, dynamic>,
-              reserved: false,
-              members: '',
-              time: '',
-              title: ''));
+            map: element.data() as Map<String, dynamic>,
+          ));
         });
         return messages; //QuerySnapshot에서 List<MessageModel> 로 변경이 됐으니 반환
       }); //Stream<QuerySnapshot> 에서 Stream<List<MessageModel>>로 변경되어 반환됨
