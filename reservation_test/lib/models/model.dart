@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'dart:developer';
 
 class Reservation extends GetxController {
   Reservation();
@@ -158,12 +159,20 @@ class Reservation extends GetxController {
         "members": [],
       },
     ];
+    final setData =
+        FirebaseFirestore.instance.collection("secondFloor").doc('time3');
+    setData.set({
+      "time": "20:30 ~ 21:00",
+      "reserved": false,
+      "title": '',
+      "members": '',
+    });
   }
 
   readFireData() {
-    final ref =
-        FirebaseFirestore.instance.collection('reservation').doc('thirdFloor');
-    ref.get().then((value) => {print(value.data())});
+    final ref = FirebaseFirestore.instance.collection('secondFloor');
+
+    ref.get().then((value) => {log("${(value.docs)}")});
   }
 
   @override
@@ -171,7 +180,7 @@ class Reservation extends GetxController {
     // TODO: implement onInit
     super.onInit();
     //firebase data 가져오기
-    getData();
+    // getData();
     readFireData();
   }
 }

@@ -1,117 +1,81 @@
-import 'dart:typed_data';
+import 'dart:developer';
 
-import 'package:file_picker/file_picker.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_material_pickers/flutter_material_pickers.dart';
+import 'package:reservation_test/models/second_model.dart';
 
-class ExampleModel {
-  // Scroll/Radio Picker Model
-  static const List<PickerModel> usStates = <PickerModel>[
-    PickerModel('Alabama', code: 'AL'),
-    PickerModel('Alaska', code: 'AK'),
-    PickerModel('Arizona', code: 'AZ'),
-    PickerModel('Arkansas', code: 'AR'),
-    PickerModel('California', code: 'CA'),
-    PickerModel('Colorado', code: 'CO'),
-    PickerModel('Connecticut', code: 'CT'),
-    PickerModel('Delaware', code: 'DE'),
-    PickerModel('Florida', code: 'FL'),
-    PickerModel('Georgia', code: 'GA'),
-    PickerModel('Hawaii', code: 'HW'),
-    PickerModel('Idaho', code: 'ID'),
-    PickerModel('Illinois', code: 'IL'),
-    PickerModel('Indiana', code: 'IN'),
-    PickerModel('Iowa', code: 'IO'),
-    PickerModel('Kansas', code: 'KA'),
-    PickerModel('Kentucky', code: 'KE'),
-    PickerModel('Louisiana', code: 'LO'),
-    PickerModel('Maine', code: 'MA'),
-    PickerModel('Maryland', code: 'ML'),
-    PickerModel('Massachusetts', code: 'MA'),
-    PickerModel('Michigan', code: 'MI'),
-    PickerModel('Minnesota', code: 'MN'),
-    PickerModel('Mississippi', code: 'MS'),
-    PickerModel('Missouri', code: 'MO'),
-    PickerModel('Montana', code: 'MO'),
-    PickerModel('Nebraska', code: 'NE'),
-    PickerModel('Nevada', code: 'NV'),
-    PickerModel('New Hampshire', code: 'NH'),
-    PickerModel('New Jersey', code: 'NJ'),
-    PickerModel('New Mexico', code: 'NM'),
-    PickerModel('New York', code: 'NY'),
-    PickerModel('North Carolina', code: 'NC'),
-    PickerModel('North Dakota', code: 'ND'),
-    PickerModel('Ohio', code: 'OH'),
-    PickerModel('Oklahoma', code: 'OK'),
-    PickerModel('Oregon', code: 'OR'),
-    PickerModel('Pennsylvania', code: 'PA'),
-    PickerModel('Rhode Island', code: 'RI'),
-    PickerModel('South Carolina', code: 'SC'),
-    PickerModel('South Dakota', code: 'SD'),
-    PickerModel('Tennessee', code: 'TN'),
-    PickerModel('Texas', code: 'TX'),
-    PickerModel('Utah', code: 'UT'),
-    PickerModel('Vermont', code: 'VT'),
-    PickerModel('Virginia', code: 'VA'),
-    PickerModel('Washington', code: 'WA'),
-    PickerModel('West Virginia', code: 'WV'),
-    PickerModel('Wisconsin', code: 'WI'),
-    PickerModel('Wyoming', code: 'WY'),
-  ];
-  PickerModel selectedUsState = usStates[0];
+class MessageListScreen extends StatefulWidget {
+  const MessageListScreen({Key? key}) : super(key: key);
 
-  // Checkbox Picker Model
-  static const List<PickerModel> iceCreamToppings = <PickerModel>[
-    PickerModel('Hot Fudge', code: 'FUDGE'),
-    PickerModel('Sprinkles', code: 'SPRINK'),
-    PickerModel('Caramel', code: 'CARM'),
-    PickerModel('Oreos', code: 'OREO'),
-    PickerModel('Peanut Butter', code: 'PB'),
-    PickerModel('Cookie Dough', code: 'COOKIE'),
-    PickerModel('Whipped Cream', code: 'WHIP'),
-    PickerModel('Marshmallow', code: 'MARSH'),
-    PickerModel('Nuts', code: 'NUTS'),
-    PickerModel('Heath Bar', code: 'HEATH'),
-    PickerModel('Butterscotch', code: 'SCOTCH'),
-    PickerModel("m&m's", code: 'MM'),
-    PickerModel('Gummy worms', code: 'GUMMY'),
-    PickerModel('Fruit', code: 'FRUIT'),
-  ];
-  List<PickerModel> selectedIceCreamToppings = [
-    iceCreamToppings[0],
-    iceCreamToppings[5],
-  ];
+  @override
+  State<MessageListScreen> createState() => _MessageListScreenState();
+}
 
-  // Selection Picker Model
-  static const List<PickerModel> speedOptions = <PickerModel>[
-    PickerModel('Light', code: 1, icon: Icon(Icons.sort)),
-    PickerModel('Ridiculous', code: 2, icon: Icon(Icons.clear_all)),
-    PickerModel('Ludicrous', code: 3, icon: Icon(Icons.swap_calls)),
-    PickerModel('Plaid', code: 4, icon: Icon(Icons.select_all)),
-  ];
-  PickerModel speed = speedOptions[2];
+class _MessageListScreenState extends State<MessageListScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('메세지 목록')),
+      body: StreamBuilder<List<SecondModel>>(
+        stream: streamMessages(), //중계하고 싶은 Stream을 넣는다.
+        builder: (context, asyncSnapshot) {
+          if (!asyncSnapshot.hasData) {
+            //데이터가 없을 경우 로딩위젯을 표시한다.
+            return const Center(child: CircularProgressIndicator());
+          } else if (asyncSnapshot.hasError) {
+            return const Center(
+              child: Text('오류가 발생했습니다.'),
+            );
+          } else {
+            List<SecondModel> messages =
+                asyncSnapshot.data!; //비동기 데이터가 존재할 경우 리스트뷰 표시
+            return Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                    child: ListView.builder(
+                        itemCount: messages.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(messages[index].time),
+                          );
+                        })),
+              ],
+            );
+          }
+        },
+      ),
+    );
+  }
 
-  // Number Picker Model
-  var age = 25;
+  Stream<List<SecondModel>> streamMessages() {
+    try {
+      //찾고자 하는 컬렉션의 스냅샷(Stream)을 가져온다.
+      final Stream<QuerySnapshot> snapshots =
+          FirebaseFirestore.instance.collection('secondFloor').snapshots();
 
-  // Time Picker Model
-  var time = TimeOfDay.now();
+      //새낭 스냅샷(Stream)내부의 자료들을 List<MessageModel> 로 변환하기 위해 map을 사용하도록 한다.
+      //참고로 List.map()도 List 안의 element들을 원하는 형태로 변환하여 새로운 List로 반환한다
+      return snapshots.map((querySnapshot) {
+        List<SecondModel> messages =
+            []; //querySnapshot을 message로 옮기기 위해 List<MessageModel> 선언
+        querySnapshot.docs.forEach((element) {
+          //해당 컬렉션에 존재하는 모든 docs를 순회하며 messages 에 데이터를 추가한다.
+          messages.add(SecondModel.fromMap(
+              id: element.id,
+              map: element.data() as Map<String, dynamic>,
+              reserved: false,
+              members: '',
+              time: '',
+              title: ''));
+        });
+        return messages; //QuerySnapshot에서 List<MessageModel> 로 변경이 됐으니 반환
+      }); //Stream<QuerySnapshot> 에서 Stream<List<MessageModel>>로 변경되어 반환됨
 
-  // Date Picker Model
-  var date = DateTime.now();
-
-  // Color Picker Model
-  Color color = Colors.red;
-
-  // Palette Picker Model
-  Color palette = Colors.green;
-
-  // Swatch Picker Model
-  Color swatch = Colors.blue;
-
-  // File Picker Model
-  PlatformFile file = PlatformFile(
-      name: 'somefile.ext',
-      size: 1024 * 1024 * 15,
-      bytes: Uint8List(1024 * 1024 * 15));
+    } catch (ex) {
+      //오류 발생 처리
+      log('error)', error: ex.toString(), stackTrace: StackTrace.current);
+      return Stream.error(ex.toString());
+    }
+  }
 }
