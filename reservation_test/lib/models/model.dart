@@ -174,6 +174,10 @@ class Reservation extends GetxController {
     getData();
     readFireData();
   }
+
+  void dispose() {
+    super.dispose();
+  }
 }
 
 // class Reservation {
