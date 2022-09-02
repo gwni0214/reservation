@@ -185,7 +185,7 @@ class ThirdFloor extends StatelessWidget {
                                         ['reserved'] ==
                                     true
                                 ? Colors.grey.shade600
-                                : Colors.blue.shade400,
+                                : Colors.blue.shade700,
                             textStyle: TextStyle(
                               fontSize: 20.0,
                             ),
