@@ -69,12 +69,12 @@ class ThirdFloor extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 300.0,
-            height: 170.0,
-            padding: EdgeInsets.all(10.0),
+            width: double.infinity,
+            // height: 170.0,
+            padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
             margin: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.0),
+              // borderRadius: BorderRadius.circular(15.0),
               // color: Colors.white,
               border: Border.all(
                 color: Colors.blue.shade900,
@@ -99,7 +99,7 @@ class ThirdFloor extends StatelessWidget {
                       nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
                       style: TextStyle(
                         height: 2.0,
-                        fontSize: 17.0,
+                        fontSize: 19.0,
                       ),
                     ),
                     Text(
@@ -123,10 +123,13 @@ class ThirdFloor extends StatelessWidget {
               ],
             ),
           ),
-          SmoothPageIndicator(
-            controller: controller, // PageController
-            count: 2,
-            effect: SlideEffect(), // your preferred effect
+          Padding(
+            padding: const EdgeInsets.only(bottom: 6.0),
+            child: SmoothPageIndicator(
+              controller: controller, // PageController
+              count: 2,
+              effect: SlideEffect(), // your preferred effect
+            ),
           ),
           ScrollConfiguration(
             behavior: const ScrollBehavior().copyWith(overscroll: false),
