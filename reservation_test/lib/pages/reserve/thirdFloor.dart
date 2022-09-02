@@ -6,7 +6,6 @@ import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
-import 'package:reservation_test/models/model.dart';
 
 class ThirdFloor extends StatelessWidget {
   const ThirdFloor({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class ThirdFloor extends StatelessWidget {
     final reservationController = Get.find<Reservation>();
 
     final nowTime = new DateFormat.Hm().format(new DateTime.now());
-    // bool reservCheck = false;
+
     var maxM;
     var minus;
     List nowIndexTime = [];

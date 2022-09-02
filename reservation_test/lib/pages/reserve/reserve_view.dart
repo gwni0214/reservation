@@ -38,7 +38,8 @@ class ReserveView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '${_controller.floorTitle} 회의실',
+                    '회의실',
+                    // '${_controller.floorTitle} 회의실',
                     style: TextStyle(
                       fontSize: 30.0,
                     ),
@@ -184,6 +185,7 @@ class ReserveView extends StatelessWidget {
                           'members': '',
                           'reserved': false
                         });
+                        checkedIndex['time'] = checkedIndex['time'];
                         checkedIndex['reserved'] = false;
                         checkedIndex['title'] = '';
                         checkedIndex['members'] = '';

@@ -178,9 +178,9 @@ class Reservation extends GetxController {
     getData();
   }
 
-  void dispose() {
-    super.dispose();
-  }
+  // void dispose() {
+  //   super.dispose();
+  // }
 }
 
 // class Reservation {

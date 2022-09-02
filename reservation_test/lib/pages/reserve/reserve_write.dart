@@ -52,7 +52,7 @@ class ReserveWrite extends StatelessWidget {
                     width: double.infinity,
                     height: 40.0,
                     child: Text(
-                      '${checkedIndex['time']}',
+                      '${checkedIndex["time"]}',
                       style: TextStyle(
                         height: 1.5,
                         fontSize: 25.0,
@@ -139,9 +139,9 @@ class ReserveWrite extends StatelessWidget {
                       ),
                     ),
                     child: TextField(
-                      // onChanged: (text) {
-                      //   _controller.title.value = text;
-                      // },
+                      onChanged: (text) {
+                        _controller.title.value = text;
+                      },
                       cursorColor: Colors.blue.shade900,
                       decoration: InputDecoration(
                         focusedBorder: InputBorder.none,

@@ -42,8 +42,8 @@ class WifiCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PageController controller =
-        PageController(initialPage: 0, viewportFraction: 1);
+    // PageController controller =
+    // PageController(initialPage: 0, viewportFraction: 1);
 
     return Column(
       children: [
