@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'dart:developer';
+import 'package:reservation_test/models/second_model.dart';
+import 'package:reservation_test/controllers/controller.dart';
+import 'package:reservation_test/pages/reserve/secondFloor.dart';
 
 class Reservation extends GetxController {
   Reservation();
@@ -176,6 +179,7 @@ class Reservation extends GetxController {
     super.onInit();
     //firebase data 가져오기
     getData();
+    streamMessages();
   }
 
   // void dispose() {

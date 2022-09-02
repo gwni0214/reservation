@@ -31,4 +31,12 @@ class SecondModel {
     data['id'] = id;
     return data;
   }
+
+  // @override
+  // void iniState() {
+  //   // TODO: implement onInit
+  //   super.initState();
+  //   //firebase data 가져오기
+  //   // getData();
+  // }
 }

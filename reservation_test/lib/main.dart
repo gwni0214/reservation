@@ -10,6 +10,8 @@ import 'package:reservation_test/pages/reserve/reserve_main.dart';
 import 'package:reservation_test/pages/reserve/reserve_modify.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
+import 'package:reservation_test/controllers/controller.dart';
+import 'package:reservation_test/models/model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +19,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Reservation.getData();
+  // streamMessages();
 
   runApp(MyApp());
 }
