@@ -160,20 +160,14 @@ class Reservation extends GetxController {
         "members": [],
       },
     ];
-    final setData =
-        FirebaseFirestore.instance.collection("secondFloor").doc('time3');
-    setData.set({
-      "time": "20:30 ~ 21:00",
-      "reserved": false,
-      "title": '',
-      "members": '',
-    });
-  }
-
-  readFireData() {
-    final ref = FirebaseFirestore.instance.collection('secondFloor');
-
-    ref.get().then((value) => {log("123123${(value.docs)}")});
+    // final setData =
+    //     FirebaseFirestore.instance.collection("secondFloor").doc('time3');
+    // setData.set({
+    //   "time": "20:30 ~ 21:00",
+    //   "reserved": false,
+    //   "title": '',
+    //   "members": '',
+    // });
   }
 
   @override
@@ -182,7 +176,6 @@ class Reservation extends GetxController {
     super.onInit();
     //firebase data 가져오기
     getData();
-    readFireData();
   }
 
   void dispose() {
