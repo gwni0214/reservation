@@ -17,7 +17,7 @@ var minus;
 List nowIndexTime = [];
 var nowReserved;
 var nowM;
-setTime(messages) {
+setTime(List messages) {
   for (var i = 0; i < messages.length; i++) {
     var item = messages[i].time.toString();
     var reserved = messages[i].reserved;
@@ -29,7 +29,7 @@ setTime(messages) {
     var highTimeMin = int.parse(item.substring(3, 5));
     var nowTimeHour = int.parse(nowTime.substring(0, 2));
     var nowTimeMin = int.parse(nowTime.substring(3, 5));
-    log("asdasd@@@@" + "${minus}");
+    // log("asdasd@@@@" + "${minus}");
     if (nowTimeMin >= 30) {
       maxM = 60;
     } else if (nowTimeMin >= 0 && nowTimeMin <= 30) {
@@ -59,7 +59,7 @@ class _SecondFloorState extends State<SecondFloor> {
   @override
   Widget build(BuildContext context) {
     streamMessages();
-    log("첫번째에 실행");
+
     PageController controller =
         PageController(initialPage: 1, viewportFraction: 1);
 
@@ -164,10 +164,10 @@ class _SecondFloorState extends State<SecondFloor> {
                                           Get.toNamed(ReserveWrite.id,
                                               arguments:
                                                   messages[index].toMap());
-                                          log("${messages}");
+                                          // log("${messages}");
                                         } else if (messages[index].reserved ==
                                             true) {
-                                          log("${messages}");
+                                          // log("${messages}");
                                           Get.toNamed(ReserveView.id,
                                               arguments:
                                                   messages[index].toMap());
@@ -227,7 +227,6 @@ class _SecondFloorState extends State<SecondFloor> {
             map: element.data() as Map<String, dynamic>,
           ));
         });
-        log("@@@@@@@${messages}");
 
         setTime(messages);
         return messages; //QuerySnapshot에서 List<MessageModel> 로 변경이 됐으니 반환
