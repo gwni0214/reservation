@@ -17,15 +17,7 @@ class ReserveWrite extends StatelessWidget {
     TextEditingController textEditingController = TextEditingController();
     TextEditingController textEditingController2 = TextEditingController();
     final _controller = Get.find<Reservation>();
-    readFireData() {
-      final ref = FirebaseFirestore.instance
-          .collection('reservation')
-          .doc('secondFloor');
-      ref.get().then((value) => {print(value.data())});
-    }
-
-    readFireData();
-
+    // log("${checkedIndex}");
     return SafeArea(
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -168,6 +160,14 @@ class ReserveWrite extends StatelessWidget {
           bottomNavigationBar: BottomAppBar(
             child: InkWell(
               onTap: () {
+                FirebaseFirestore.instance
+                    .collection('secondFloor')
+                    .doc(checkedIndex['id'])
+                    .update({
+                  'title': textEditingController2.text,
+                  'members': textEditingController.text,
+                  'reserved': true
+                });
                 checkedIndex['time'] = checkedIndex['time'];
                 checkedIndex['title'] = textEditingController2.text;
                 checkedIndex['members'] = textEditingController.text;

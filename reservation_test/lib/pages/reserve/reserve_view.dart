@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reservation_test/models/model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ReserveView extends StatelessWidget {
   static const id = '/reserveView';
@@ -175,6 +176,14 @@ class ReserveView extends StatelessWidget {
                     // ),
                     child: InkWell(
                       onTap: () {
+                        FirebaseFirestore.instance
+                            .collection('secondFloor')
+                            .doc(checkedIndex['id'])
+                            .update({
+                          'title': '',
+                          'members': '',
+                          'reserved': false
+                        });
                         checkedIndex['reserved'] = false;
                         checkedIndex['title'] = '';
                         checkedIndex['members'] = '';

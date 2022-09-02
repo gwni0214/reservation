@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reservation_test/models/model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ReserveModify extends StatelessWidget {
   static const id = '/reserveModify';
@@ -148,6 +149,14 @@ class ReserveModify extends StatelessWidget {
           bottomNavigationBar: BottomAppBar(
             child: InkWell(
               onTap: () {
+                FirebaseFirestore.instance
+                    .collection('secondFloor')
+                    .doc(checkedIndex['id'])
+                    .update({
+                  'title': textEditingController2.text,
+                  'members': textEditingController.text,
+                  'reserved': true
+                });
                 checkedIndex['time'] = checkedIndex['time'];
                 checkedIndex['members'] = textEditingController.text;
                 checkedIndex['title'] = textEditingController2.text;
