@@ -11,44 +11,6 @@ import 'package:reservation_test/models/second_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:reservation_test/controllers/controller.dart';
 
-final nowTime = new DateFormat.Hm().format(new DateTime.now());
-
-var maxM;
-var minus;
-List nowIndexTime = [];
-var nowReserved;
-var nowM;
-setTime(List messages) {
-  for (var i = 0; i < messages.length; i++) {
-    var item = messages[i].time.toString();
-    var reserved = messages[i].reserved;
-    var lowTime = item.substring(0, 5);
-    var lowTimeHour = int.parse(item.substring(0, 2));
-    var lowTimeMin = int.parse(item.substring(3, 5));
-    var highTime = item.substring(8);
-    var highTimeHour = int.parse(item.substring(0, 2));
-    var highTimeMin = int.parse(item.substring(3, 5));
-    var nowTimeHour = int.parse(nowTime.substring(0, 2));
-    var nowTimeMin = int.parse(nowTime.substring(3, 5));
-    // log("minus@@@@" + "${minus}");
-    if (nowTimeMin >= 30) {
-      maxM = 60;
-    } else if (nowTimeMin >= 0 && nowTimeMin <= 30) {
-      maxM = 30;
-    }
-    minus = maxM - nowTimeMin;
-
-    if (lowTimeHour == nowTimeHour) {
-      nowIndexTime = [];
-      nowIndexTime.add(item);
-
-      nowReserved = reserved;
-    }
-
-    nowM = nowTimeMin;
-  }
-}
-
 class SecondFloor extends StatefulWidget {
   const SecondFloor({Key? key}) : super(key: key);
 
@@ -82,9 +44,8 @@ class _SecondFloorState extends State<SecondFloor> {
             child: Column(
               children: [
                 Text(
-                  'test',
-
-                  // '${messages[index].time}',
+                  // 'test',
+                  '${arr[0].time}',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),
@@ -96,9 +57,9 @@ class _SecondFloorState extends State<SecondFloor> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "test",
+                      // "test",
                       // log('nowIndex 확인 ${nowIndexTime[0]}'),
-                      // nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
+                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,

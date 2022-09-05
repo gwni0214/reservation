@@ -14,11 +14,14 @@ import 'package:reservation_test/controllers/controller.dart';
 import 'package:reservation_test/models/model.dart';
 
 void main() async {
+  // final reservationController = Get.find<Reservation>();
+
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // reservationController.setStream();
 
   // Reservation.getData();
   // streamMessages();
