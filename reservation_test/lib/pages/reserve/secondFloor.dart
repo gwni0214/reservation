@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:reservation_test/models/model.dart';
+import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
@@ -19,6 +19,7 @@ class SecondFloor extends StatefulWidget {
 }
 
 class _SecondFloorState extends State<SecondFloor> {
+  final reservationController = Get.find<Reservation>();
   @override
   Widget build(BuildContext context) {
     // streamMessages();
@@ -44,8 +45,8 @@ class _SecondFloorState extends State<SecondFloor> {
             child: Column(
               children: [
                 Text(
-                  // 'test',
-                  '${arr[0].time}',
+                  '2층',
+                  // '${arr[0].time}',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),
@@ -57,9 +58,7 @@ class _SecondFloorState extends State<SecondFloor> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      // "test",
-                      // log('nowIndex 확인 ${nowIndexTime[0]}'),
-                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
+                      '${nowIndexTime[0]}',
                       style: TextStyle(
                         height: 2.0,
                         fontSize: 17.0,
@@ -77,8 +76,7 @@ class _SecondFloorState extends State<SecondFloor> {
                   height: 20.0,
                 ),
                 Text(
-                  "test",
-                  // nowReserved ? '사용중' : '사용가능',
+                  '${nowReserved}',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),

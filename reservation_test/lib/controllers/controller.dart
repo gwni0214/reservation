@@ -11,34 +11,41 @@ final nowTime = new DateFormat.Hm().format(new DateTime.now());
 
 var maxM;
 var minus;
-List nowIndexTime = [];
+List nowIndexTime = ['현재시간 준비중', '현재시간 준비중'];
 var nowReserved;
 var nowM;
+bool reserved = false;
+var lowTime;
+var lowTimeHour;
+var lowTimeMin;
+var nowTimeHour;
+var nowTimeMin;
 setTime(List arr) {
+  nowIndexTime = [];
   for (var i = 0; i < arr.length; i++) {
     var item = arr[i].time.toString();
-    var reserved = arr[i].reserved;
-    var lowTime = item.substring(0, 5);
-    var lowTimeHour = int.parse(item.substring(0, 2));
-    var lowTimeMin = int.parse(item.substring(3, 5));
-    var highTime = item.substring(8);
-    var highTimeHour = int.parse(item.substring(0, 2));
-    var highTimeMin = int.parse(item.substring(3, 5));
-    var nowTimeHour = int.parse(nowTime.substring(0, 2));
-    var nowTimeMin = int.parse(nowTime.substring(3, 5));
-    // log("minus@@@@" + "${minus}");
-    // if (nowTimeMin >= 30) {
-    //   maxM = 60;
-    // }
-    // else if (nowTimeMin >= 0 && nowTimeMin <= 30) {
-    //   maxM = 30;
-    // }
+    reserved = arr[i].reserved;
+
+    lowTime = item.substring(0, 5);
+
+    lowTimeHour = int.parse(item.substring(0, 2));
+    lowTimeMin = int.parse(item.substring(3, 5));
+
+    nowTimeHour = int.parse(nowTime.substring(0, 2));
+    nowTimeMin = int.parse(nowTime.substring(3, 5));
+
+    if (nowTimeMin >= 30) {
+      maxM = 60;
+    } else if (nowTimeMin >= 0 && nowTimeMin <= 30) {
+      maxM = 30;
+    }
     minus = maxM - nowTimeMin;
 
     if (lowTimeHour == nowTimeHour) {
-      nowIndexTime = [];
-      nowIndexTime.add(item);
+      log("${item}");
 
+      nowIndexTime.add(item);
+      log("nowIndexTime${nowIndexTime}");
       nowReserved = reserved;
     }
 
@@ -69,6 +76,7 @@ Stream<List<SecondModel>> streamMessages() {
       });
 
       arr = messages;
+      log("arr@@@@@@${arr}");
       setTime(arr);
       return messages; //QuerySnapshot에서 List<MessageModel> 로 변경이 됐으니 반환
     }); //Stream<QuerySnapshot> 에서 Stream<List<MessageModel>>로 변경되어 반환됨

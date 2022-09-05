@@ -180,7 +180,6 @@ class Reservation extends GetxController {
     //firebase data 가져오기
     getData();
     setStream();
-    streamMessages();
   }
 
   void setStream() {
