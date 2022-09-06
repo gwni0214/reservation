@@ -6,6 +6,33 @@ import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
 import 'package:intl/intl.dart';
 import 'dart:developer';
+import 'package:reservation_test/pages/reserve/date_picker.dart';
+import 'package:dio/dio.dart';
+import 'package:dio/src/response.dart' as Response;
+import 'package:http/http.dart' as http;
+
+// class Test {
+//   Future<bool> test() async {
+//     Dio dio = new Dio();
+//     try {
+//       Response response =
+//           await dio.get('https://jsonplaceholder.typicode.com/todos/1');
+//       if (response.statusCode == 200) {
+//         final jsonBody = Json.decode(response.data);
+
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     } catch (e) {
+//       Exception(e);
+//     } finally {
+//       dio.close();
+//     }
+
+//     return false;
+//   }
+// }
 
 class ThirdFloor extends StatelessWidget {
   const ThirdFloor({Key? key}) : super(key: key);
@@ -67,6 +94,7 @@ class ThirdFloor extends StatelessWidget {
     return Center(
       child: Column(
         children: [
+          Text(''),
           Container(
             width: double.infinity,
             // height: 170.0,
@@ -87,38 +115,55 @@ class ThirdFloor extends StatelessWidget {
                     fontSize: 25.0,
                   ),
                 ),
-                SizedBox(
-                  height: 10.0,
+                // SizedBox(
+                //   height: 10.0,
+                // ),
+                Row(
+                  children: [
+                    Expanded(child: DateWidget()),
+                    Expanded(
+                      child: Text(
+                        // "asd",
+                        nowM <= 30
+                            ? '${nowIndexTime[0]}'
+                            : '${nowIndexTime[1]}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      // "asd",
-                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
+                      '${minus}분 남음',
                       style: TextStyle(
-                        height: 2.0,
-                        fontSize: 19.0,
+                        fontSize: 20.0,
                       ),
                     ),
                     Text(
-                      '${minus}분 남음',
+                      // "사용가능",
+                      nowReserved ? '사용중' : '사용가능',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 25.0,
+                        fontSize: 20.0,
                       ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
-                Text(
-                  // "사용가능",
-                  nowReserved ? '사용중' : '사용가능',
-                  style: TextStyle(
-                    fontSize: 25.0,
-                  ),
-                )
+                // Text(
+                //   // "사용가능",
+                //   nowReserved ? '사용중' : '사용가능',
+                //   style: TextStyle(
+                //     fontSize: 25.0,
+                //   ),
+                // )
               ],
             ),
           ),

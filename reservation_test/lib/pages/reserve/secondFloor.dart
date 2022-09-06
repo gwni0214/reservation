@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:reservation_test/models/model.dart';
+import 'package:reservation_test/models/model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:reservation_test/pages/reserve/reserve_view.dart';
 import 'package:reservation_test/pages/reserve/reserve_write.dart';
@@ -10,6 +10,7 @@ import 'dart:developer';
 import 'package:reservation_test/models/second_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:reservation_test/controllers/controller.dart';
+import 'package:reservation_test/pages/reserve/date_picker.dart';
 
 class SecondFloor extends StatefulWidget {
   const SecondFloor({Key? key}) : super(key: key);
@@ -21,6 +22,8 @@ class SecondFloor extends StatefulWidget {
 class _SecondFloorState extends State<SecondFloor> {
   @override
   Widget build(BuildContext context) {
+    final reservationController = Get.find<Reservation>();
+    // final secondController = Get.find<SecondModel>();
     // streamMessages();
 
     PageController controller =
@@ -44,45 +47,61 @@ class _SecondFloorState extends State<SecondFloor> {
             child: Column(
               children: [
                 Text(
-                  // 'test',
-                  '${arr[0].time}',
+                  '2층 회의실',
+                  // '${arr[0].time}',
                   style: TextStyle(
                     fontSize: 25.0,
                   ),
                 ),
-                SizedBox(
-                  height: 10.0,
+                // SizedBox(
+                //   height: 10.0,
+                // ),
+                Row(
+                  children: [
+                    Expanded(child: DateWidget()),
+                    Expanded(
+                      child: Text(
+                        "asd",
+                        // nowM <= 30
+                        //     ? '${nowIndexTime[0]}'
+                        //     : '${nowIndexTime[1]}',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      // "test",
-                      // log('nowIndex 확인 ${nowIndexTime[0]}'),
-                      nowM <= 30 ? '${nowIndexTime[0]}' : '${nowIndexTime[1]}',
+                      '${minus}분 남음',
                       style: TextStyle(
-                        height: 2.0,
-                        fontSize: 17.0,
+                        fontSize: 20.0,
                       ),
                     ),
                     Text(
-                      '${minus}분 남음',
+                      "사용가능",
+                      // nowReserved ? '사용중' : '사용가능',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 25.0,
+                        fontSize: 20.0,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "test",
-                  // nowReserved ? '사용중' : '사용가능',
-                  style: TextStyle(
-                    fontSize: 25.0,
-                  ),
-                )
+                // SizedBox(
+                //   height: 20.0,
+                // ),
+                // Text(
+                //   "test",
+                //   // nowReserved ? '사용중' : '사용가능',
+                //   style: TextStyle(
+                //     fontSize: 25.0,
+                //   ),
+                // )
               ],
             ),
           ),

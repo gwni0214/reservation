@@ -98,24 +98,25 @@ class Login extends StatelessWidget {
                               height: 50.0,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  if (userId == "thejoin" &&
-                                      userPassword == "1234") {
-                                    Get.offAllNamed(Home.id);
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text('로그인 정보를 다시 확인하세요',
-                                            textAlign: TextAlign.center),
-                                        duration: Duration(seconds: 3),
-                                        backgroundColor: Color.fromARGB(
-                                          255,
-                                          26,
-                                          35,
-                                          126,
-                                        ),
-                                      ),
-                                    );
-                                  }
+                                  // if (userId == "thejoin" &&
+                                  //     userPassword == "1234") {
+                                  //   Get.offAllNamed(Home.id);
+                                  // } else {
+                                  //   ScaffoldMessenger.of(context).showSnackBar(
+                                  //     SnackBar(
+                                  //       content: Text('로그인 정보를 다시 확인하세요',
+                                  //           textAlign: TextAlign.center),
+                                  //       duration: Duration(seconds: 3),
+                                  //       backgroundColor: Color.fromARGB(
+                                  //         255,
+                                  //         26,
+                                  //         35,
+                                  //         126,
+                                  //       ),
+                                  //     ),
+                                  //   );
+                                  // }
+                                  Get.offAllNamed(Home.id);
                                 },
                                 style: ButtonStyle(
                                   backgroundColor:

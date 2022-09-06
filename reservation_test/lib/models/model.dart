@@ -4,6 +4,8 @@ import 'dart:developer';
 import 'package:reservation_test/models/second_model.dart';
 import 'package:reservation_test/controllers/controller.dart';
 import 'package:reservation_test/pages/reserve/secondFloor.dart';
+import 'days.dart';
+import 'members.dart';
 
 class Reservation extends GetxController {
   Reservation();
@@ -163,14 +165,23 @@ class Reservation extends GetxController {
         "members": [],
       },
     ];
-    // final setData =
-    //     FirebaseFirestore.instance.collection("secondFloor").doc('time3');
-    // setData.set({
-    //   "time": "20:30 ~ 21:00",
+    // final setData1 = FirebaseFirestore.instance
+    //     .collection("secondFloor")
+    //     .doc('months')
+    //     .collection('01')
+    //     .doc('days')
+    //     .collection('05')
+    //     .doc('time01');
+    // setData1.set({
+    //   "id": "time01",
+    //   "time": "09:00 ~ 09:30",
+    //   "title": "",
+    //   "members": [],
     //   "reserved": false,
-    //   "title": '',
-    //   "members": '',
     // });
+
+    // getDays();
+    // getDaysLast();
   }
 
   @override
@@ -180,7 +191,9 @@ class Reservation extends GetxController {
     //firebase data 가져오기
     getData();
     setStream();
-    streamMessages();
+    getDays();
+    getDaysLast();
+    // streamMessages();
   }
 
   void setStream() {

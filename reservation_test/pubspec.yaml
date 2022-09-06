@@ -40,6 +40,8 @@ dependencies:
   numberpicker:
   flutter_material_pickers:
   firebase_core:
+  dio:
+  http:
 
 dev_dependencies:
   flutter_test:
