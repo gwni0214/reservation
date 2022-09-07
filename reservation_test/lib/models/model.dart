@@ -165,6 +165,7 @@ class Reservation extends GetxController {
         "members": [],
       },
     ];
+    LoginMembers();
     // final setData1 = FirebaseFirestore.instance
     //     .collection("secondFloor")
     //     .doc('months')
@@ -190,9 +191,10 @@ class Reservation extends GetxController {
     super.onInit();
     //firebase data 가져오기
     getData();
-    setStream();
-    getDays();
-    getDaysLast();
+    // setStream();
+    // getDays();
+    // getDaysLast();
+
     // streamMessages();
   }
 

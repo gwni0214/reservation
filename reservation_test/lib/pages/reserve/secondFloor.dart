@@ -20,6 +20,7 @@ class SecondFloor extends StatefulWidget {
 }
 
 class _SecondFloorState extends State<SecondFloor> {
+  final reservationController = Get.find<Reservation>();
   @override
   Widget build(BuildContext context) {
     final reservationController = Get.find<Reservation>();
@@ -78,6 +79,7 @@ class _SecondFloorState extends State<SecondFloor> {
                   children: [
                     Text(
                       '${minus}분 남음',
+                      // '${nowIndexTime[0]}',
                       style: TextStyle(
                         fontSize: 20.0,
                       ),
@@ -102,6 +104,15 @@ class _SecondFloorState extends State<SecondFloor> {
                 //     fontSize: 25.0,
                 //   ),
                 // )
+                // SizedBox(
+                //   height: 20.0,
+                // ),
+                // Text(
+                //   '${nowReserved}',
+                //   style: TextStyle(
+                //     fontSize: 25.0,
+                //   ),
+                // ),
               ],
             ),
           ),

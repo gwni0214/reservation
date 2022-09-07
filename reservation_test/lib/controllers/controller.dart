@@ -11,7 +11,7 @@ final nowTime = new DateFormat.Hm().format(new DateTime.now());
 
 var maxM;
 var minus;
-List nowIndexTime = [];
+List nowIndexTime = ['현재시간 준비중', '현재시간 준비중'];
 var nowReserved;
 var nowM;
 var item;
@@ -25,6 +25,7 @@ var highTimeMin;
 var nowTimeHour;
 var nowTimeMin;
 setTime(List arr) {
+  nowIndexTime = [];
   for (var i = 0; i < arr.length; i++) {
     item = arr[i].time.toString();
     reserved = arr[i].reserved;
@@ -45,9 +46,10 @@ setTime(List arr) {
     minus = maxM - nowTimeMin;
 
     if (lowTimeHour == nowTimeHour) {
-      nowIndexTime = [];
-      nowIndexTime.add(item);
+      log("${item}");
 
+      nowIndexTime.add(item);
+      log("nowIndexTime${nowIndexTime}");
       nowReserved = reserved;
     }
 
@@ -78,6 +80,7 @@ Stream<List<SecondModel>> streamMessages() {
       });
 
       arr = messages;
+      log("arr@@@@@@${arr}");
       setTime(arr);
       return messages; //QuerySnapshot에서 List<MessageModel> 로 변경이 됐으니 반환
     }); //Stream<QuerySnapshot> 에서 Stream<List<MessageModel>>로 변경되어 반환됨

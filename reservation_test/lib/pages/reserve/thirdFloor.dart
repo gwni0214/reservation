@@ -123,10 +123,10 @@ class ThirdFloor extends StatelessWidget {
                     Expanded(child: DateWidget()),
                     Expanded(
                       child: Text(
-                        // "asd",
-                        nowM <= 30
-                            ? '${nowIndexTime[0]}'
-                            : '${nowIndexTime[1]}',
+                        "asd",
+                        // nowM <= 30
+                        //     ? '${nowIndexTime[0]}'
+                        //     : '${nowIndexTime[1]}',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 20.0,
